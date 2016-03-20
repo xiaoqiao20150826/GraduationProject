@@ -1,0 +1,42 @@
+doctype html
+html
+    head
+        title= title
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        if (article && article.seoKeywords)
+            meta(name="keywords" content='#{article.seoKeywords}')
+        if (article && article.seoDescription)
+            meta(name="description" content='#{article.seoDescription}')
+        link(rel='icon', href = '/images/favicon.jpg')
+        link(rel='stylesheet', href='/bootcss/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/style.css')
+        script(src='/js/jquery-1.11.1.min.js')
+        script(src='/bootcss/js/bootstrap.min.js')
+        script(src='/js/myjs.js')
+        block cssjs
+    body
+        div.container
+            div.blog-header-title.row
+                img(src="#{config.headPicture}").blog-header-pic
+            ul(class="blog-header-nav row")
+                li
+                    a(href="/") 首页
+                li
+                    a(href="/collect") 文集
+                if isMe
+                    li
+                        a(href='/admin' title="管理页")
+                            span.glyphicon.glyphicon-user
+        div.container
+            block content
+        footer.footer
+            div.container
+                p.text-center
+                    ©#{config.ownerName} Powered by 
+                    a(href="http://longmenwaideyu.com" target="_blank") 龙门外的鱼
+                p.text-center
+                    a(href='http://www.miibeian.gov.cn/' target="_blank")= config.ICPNumber
+
+
