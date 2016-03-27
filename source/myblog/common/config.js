@@ -1,5 +1,5 @@
 var config = {
-    blogName: '个人博客',
+    blogName: '杨小侨的个人博客',
     headPicture: '/images/bg.png',
     aPageNum: 7,//分页,一页显示多少文章.
     dbUser: 'root',//dbUser填写 '' 说明数据库和本博客在同一台机器
@@ -7,7 +7,7 @@ var config = {
     dbAddress: '127.0.0.1',
     dbPort: '27017',
     dbName: 'blog',
-    ownerName: '龙门外的鱼',//个人姓名，显示在博主信息中
+    ownerName: '杨小桥',//个人姓名，显示在博主信息中
     ownerLocation: '',//所在地，显示在博主信息中
     ownerOccupation: '-',//职业，显示在博主信息中
     ownerSkill: '',//主要从事领域与技能，显示在博主信息中

@@ -1,49 +1,94 @@
-extends layout
-
-block content
-    div.row
-        div.col-sm-8
-            each val in doc
-                div.blog-container
-                    div.blog-title
-                        a(href='/article/#{val.customURL}')= val.title
-                    div.blog-wrap.blog-abstract-info
-                        span.col-sm-6= val.createTime1
-                        span.col-sm-2= '翻牌: ' + val.browse
-                        span.col-sm-2= '临幸: ' + val.reply
-                        div.col-sm-6
-                            span.blog-tag.glyphicon.glyphicon-tags
-                            each tag in val.tagArr
-                                a(href='/tag/#{tag}').blog-tag= tag
-                        div.col-sm-6
-                            span.blog-tag.glyphicon.glyphicon-folder-open
-                            each c in val.collectArr
-                                a(href='/collect/cid/#{c}').blog-tag= c
-                    div.blog-abstract!= val.content
-                    div.blog-bottom
-                        a.more-link(href='/article/#{val.customURL}') more>>
-            div.page
-                ul(class="pagination")
-                    if curPage != 1
-                        li
-                            a(href="/?page=#{curPage - 1}") &laquo;
-                    else
-                        li.disabled
-                            a(href="javascript:void(0)") &laquo;
-                    -for (var i = 1; i <= totPage; i++)
-                        if curPage == i
-                            li.active
-                                a(href='/?page=#{i}')= i
-                        else
+doctype html
+html
+    head
+        include ./includes/head
+    body
+        section#home.home-section.page-section.highlight
+            section.inner-section
+                div.home-carousel
+                    div#home-owl-demo.home-owl
+                        div.item
+                            div.bg1.text-center
+                                div.shadow
+                                    div.home-owl-content.col-md-offset-2.col-md-8
+                                        div.heading
+                                            h1 CREATIVE DESIGN
+                                        div.motto
+                                            span.text HTML 5
+                                            span.separator  . 
+                                            span.text CSS 3 
+                                            span.separator . 
+                                            span.text JAVA SCRIPT
+                        div.item
+                            div.bg2.text-center
+                                 div.shadow
+                                    div.home-owl-content.col-md-offset-2.col-md-8
+                                        div.heading
+                                            h1 EXCELLENT
+                                        div.motto
+                                            span.text RESPONSIVE SLIDER
+                                            span.separator
+                        div.item
+                            div.bg3.text-center
+                                 div.shadow
+                                    div.home-owl-content.col-md-offset-2.col-md-8
+                                        div.heading
+                                            h1 START YOUR PAGE
+                                        div.motto
+                                            span.text EASY CUSTOMIZE
+                                            span.separator 
+                a.scroll-link(data-soffset="50" href="#about")
+                    div.mouse-icon
+                        div.scroll-down
+        include ./includes/header
+        div.row
+            div.col-sm-8
+                each val in doc
+                    div.blog-container
+                        div.blog-title
+                            a(href='/article/#{val.customURL}')= val.title
+                        div.blog-wrap.blog-abstract-info
+                            span.col-sm-6= val.createTime1
+                            span.col-sm-2= '翻牌: ' + val.browse
+                            span.col-sm-2= '临幸: ' + val.reply
+                            div.col-sm-6
+                                span.blog-tag.glyphicon.glyphicon-tags
+                                each tag in val.tagArr
+                                    a(href='/tag/#{tag}').blog-tag= tag
+                            div.col-sm-6
+                                span.blog-tag.glyphicon.glyphicon-folder-open
+                                each c in val.collectArr
+                                    a(href='/collect/cid/#{c}').blog-tag= c
+                        div.blog-abstract!= val.content
+                        div.blog-bottom
+                            a.more-link(href='/article/#{val.customURL}') more>>
+                div.page
+                    ul(class="pagination")
+                        if curPage != 1
                             li
-                                a(href='/?page=#{i}')= i
-                    if curPage < totPage
-                        li
-                            a(href="/?page=#{curPage + 1}") &raquo;
-                    else
-                        li.disabled
-                            a(href="javascript:void(0)") &raquo;
-        div.col-sm-4.hidden-xs
-            include ./common/ownerInfo.jade
-            include ./common/sidebar.jade
-            include ./common/friendLinks.jade
+                                a(href="/?page=#{curPage - 1}") &laquo;
+                        else
+                            li.disabled
+                                a(href="javascript:void(0)") &laquo;
+                        -for (var i = 1; i <= totPage; i++)
+                            if curPage == i
+                                li.active
+                                    a(href='/?page=#{i}')= i
+                            else
+                                li
+                                    a(href='/?page=#{i}')= i
+                        if curPage < totPage
+                            li
+                                a(href="/?page=#{curPage + 1}") &raquo;
+                        else
+                            li.disabled
+                                a(href="javascript:void(0)") &raquo;
+            div.col-sm-4.hidden-xs
+                include ./common/ownerInfo.jade
+                include ./common/sidebar.jade
+                include ./common/friendLinks.jade
+        include ./includes/footer
+        include ./includes/js
+
+
+

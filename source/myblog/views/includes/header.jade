@@ -1,0 +1,36 @@
+nav#sm.menu
+	div.sm-wrap
+		i.icon-remove.menu-close
+		p.site-name NAZ
+		a.scroll-link(href="#home") Home
+		a.scroll-link(href="#about") about
+		a.scroll-link(href="#services") services
+		a.scroll-link(href="#portfolio") portfolio
+		a.scroll-link(href="#team") team
+		a.scroll-link(href="#contact") contact
+	div#sm-trigger
+section#mastwrap.mast-wrap.sliding
+header#masthead.clearfix.trans-header
+section#navigation.navigation-section.page-section
+	section.inner-section
+		section.menu-container
+			div.row
+				article.col-md-12.text-center
+					div.navigation-container
+						div.logo.pull-left
+							a.logos(href="#home")
+								img(height="60" src="img/logo/logo.jpg")
+						div.navigation-right
+							ul
+								li
+									a#home-linker.nav-active.scroll-link(href="/") 首页
+								li
+									a#about-linker.scroll-link(href="#about") 文章
+								li
+									a#team-linker.scroll-link(href="/collect") 文集
+								li
+									a#team-linker.scroll-link(href="#contact") 关于我
+								if isMe
+									li
+										a#team-linker.scroll-link(href='/admin' title="管理页") 
+											span.glyphicon.glyphicon-user
