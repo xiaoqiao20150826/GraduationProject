@@ -48,7 +48,7 @@ $(function ($) {
     //Waypoints
 
     $(window).load(function(){
-      $('#about').waypoint(function (direction) {
+      $('#content').waypoint(function (direction) {
                 
               if (direction === 'down') {
                 
@@ -246,14 +246,6 @@ $(function ($) {
           itemsDesktopSmall : [979,1]
         });
        
-	//Box slider
-	$('.bxslider').bxSlider({
-		mode: 'fade',
-		auto: true,
-		autoControls: true
-	});
-
-
     // Navigation activator
 
     $('.navigation-container ul li a').click(function(){

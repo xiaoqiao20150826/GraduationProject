@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>slidingmenu</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/slidingmenu.css" rel="stylesheet">
+    <link href="css/naz.responsive.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <body>
+        <nav class="menu" id="sm">
+            <div class="sm-wrap">
+                <i class="icon-remove menu-close"></i>
+                <p class="site-name">NAZ</p>
+                <a class="scroll-link" href="#home">Home</a>
+                <a class="scroll-link" href="#about">About</a>
+                <a class="scroll-link" href="#services">Services</a>
+                <a class="scroll-link" href="#portfolio">Portfolio</a>
+                <a class="scroll-link" href="#team">Team</a>
+                <a class="scroll-link" href="#contact">Contact</a>
+            </div>
+            <!-- NAVIGATION TRIGGER BUTTON -->
+            <div id="sm-trigger"></div>
+        </nav>
+        <section id="mastwrap" class="mast-wrap sliding">
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <p>test</p>
+            <section id="navigation" class="navigation-section page-section">
+                <section class="inner-section">
+                    <section class="menu-container">
+                        <div class="row">
+                            <article class="col-md-12 text-center">
+                                <div class="navigation-container">
+                                    <div class="logo pull-left">
+                                        <a href="#home" class="logos">
+                                            <img alt height="35" src="img/logo/logo.jpg">
+                                        </a>
+                                    </div>
+                                    <div class="navigation-right">
+                                        <ul>
+                                            <li><a id="home-linker" class="nav-active scroll-link" href="#home">home</a></li>
+                                            <li><a id="about-linker" class="scroll-link" href="#about">About</a></li>
+                                            <li><a id="services-linker" class="scroll-link" href="#services">services</a></li>
+                                            <li><a id="portfolio-linker" class="scroll-link" href="#portfolio">Portfolio</a></li>
+                                            <li><a id="team-linker" class="scroll-link" href="#team">team</a></li>
+                                            <li><a id="contact-linker" class="scroll-link" href="#contact">contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+        <p id="about">test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <p>test</p>
+        <script src="js/jquery-1.10.1.min.js"></script>
+        <script src="js/slidingmenu.js"></script>
+        <script src="js/waypoints.js"></script>
+        <script>
+        (function() {
+            "use strict";
+            $(window).load(function() {
+                $('#about').waypoint(function(direction) {
+
+                    if (direction === 'down') {
+
+                        $('.navigation-section').addClass("header-nav-fixed");
+
+                    } else {
+                        $('.navigation-section').removeClass("header-nav-fixed");
+
+
+                    }
+
+                }, {
+                    offset: 100
+                })
+            })
+        })();
+        </script>
+    </body>
+
+</html>
