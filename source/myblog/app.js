@@ -1,6 +1,5 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -9,11 +8,9 @@ var app = express();
 var session = require('express-session')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-//设置引擎，将.jade的文件用./common/jade处理
+//设置引擎，将.jade扩展名的文件用./common/jade处理
 app.engine('.jade', require('./common/jade'));
 app.set('view engine', 'jade');
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -69,6 +66,11 @@ var opts = {
     }
 };
 
-/*mongoose.connect('mongodb://' + config.dbUser + ':' + config.dbPass + '@' + config.dbAddress + ':' + config.dbPort + '/' +config.dbName);*/
-mongoose.connect('mongodb://localhost/'+config.dbName);
-module.exports = app;  
+mongoose.connect('mongodb://'+ config.dbAddress + ':' + config.dbPort + '/' +config.dbName);
+
+app.set('port', process.env.PORT || config.port);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('Server listening on port ' + server.address().port);
+});
+

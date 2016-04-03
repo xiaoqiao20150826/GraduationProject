@@ -1,4 +1,4 @@
-extends ../layout
+extends ./layout
 block cssjs
     script(type="text/javascript", src="/ueditor/ueditor.config.js")
     script(type="text/javascript", src="/ueditor/ueditor.all.min.js")
@@ -86,7 +86,7 @@ block content
                 //-     div.blog-box-title
                 //-         div.blog-box-titlein 文章大纲
                 //-     div.outline-container!= outline
-                include ../includes/sidebar.jade
-                include ../includes/friendLinks.jade
+                include includes/sidebar.jade
+                include includes/friendLinks.jade
         script(type ='text/javascript' src = '/js/article.js')
                     

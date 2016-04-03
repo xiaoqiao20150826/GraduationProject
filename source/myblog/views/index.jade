@@ -17,37 +17,31 @@ html
                                     div.shadow
                                         div.home-owl-content.col-md-offset-2.col-md-8
                                             div.heading
-                                                h1 CREATIVE DESIGN
+                                                h1 通过阅读来获取思想独立，写出自己对生活的见解
                                             div.motto
-                                                span.text HTML 5
-                                                span.separator  . 
-                                                span.text CSS 3 
-                                                span.separator . 
-                                                span.text JAVA SCRIPT
+                                                span.text Let's get independent thought by reading and write their insights on life.
                             div.item
                                 div.bg2.text-center
                                      div.shadow
                                         div.home-owl-content.col-md-offset-2.col-md-8
                                             div.heading
-                                                h1 EXCELLENT
+                                                h1 你回首看得越远，你向前也会看得越远
                                             div.motto
-                                                span.text RESPONSIVE SLIDER
-                                                span.separator
+                                                span.text The farther backward you can look, the farther forward you will see.
                             div.item
                                 div.bg3.text-center
                                      div.shadow
                                         div.home-owl-content.col-md-offset-2.col-md-8
                                             div.heading
-                                                h1 START YOUR PAGE
+                                                h1 昨天已经过去，明天还没到来。只有今天是一份礼物
                                             div.motto
-                                                span.text EASY CUSTOMIZE
-                                                span.separator 
-                    a.scroll-link(data-soffset="50" href="#about")
+                                                span.text Yesterday is history, tomorrow is a mystery, but today is a gift. 
+                    a.scroll-link(data-soffset="50" href="#content")
                         div.mouse-icon
                             div.scroll-down
             include ./includes/header
-            section.container    
-                div#content.row
+            section#content.container    
+                div.row
                     div.col-sm-8
                         each val in doc
                             div.blog-container
@@ -68,20 +62,23 @@ html
                                         i.fa.fa-columns
                                         each c in val.collectArr
                                             a(href='/collect/cid/#{c}').blog-tag= c
-                                     span
+                                     span.time
                                         i.fa.fa-calendar
                                         span= val.createTime1
                                 div.blog-abstract!= val.content
                                 div.blog-bottom
-                                    a.more-link(href='/article/#{val.customURL}') more>>
+                                    a.more-link.btn-get-btn3(href='/article/#{val.customURL}') 阅读全文
+                        div.blog-container
+                                a 查看更多
                     div.col-sm-4.hidden-xs
-                        include ./common/ownerInfo.jade
-                        include ./common/sidebar.jade
-                        include ./common/friendLinks.jade
+                        include ./includes/sidebar.jade
+                        include ./includes/friendLinks.jade
             include ./includes/footer
+        script(src='/js/pace.min.js')
         include ./includes/js
         script(src='/js/slidingmenu.js')
-        script(src='/js/pace.min.js')
+        script(src='/js/scroll.js')
+        
 
 
 

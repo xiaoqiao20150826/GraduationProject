@@ -47,26 +47,7 @@ $(function ($) {
 
     //Waypoints
 
-    $(window).load(function(){
-      $('#content').waypoint(function (direction) {
-                
-              if (direction === 'down') {
-                
-                $('.navigation-section').addClass("header-nav-fixed");
-                
-              } 
-              else {
-                 $('.navigation-section').removeClass("header-nav-fixed");
-                 
-                
-           }
-
-    }, { offset: 100 });
-
-
-
-  });
-  
+    
 
 
 

@@ -7,6 +7,7 @@ var config = {
     dbAddress: '127.0.0.1',
     dbPort: '27017',
     dbName: 'blog',
+    port: '3000',
     ownerName: '杨小桥',//个人姓名，显示在博主信息中
     ownerLocation: '',//所在地，显示在博主信息中
     ownerOccupation: '-',//职业，显示在博主信息中

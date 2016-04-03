@@ -39,18 +39,19 @@
 }
 
 .home-owl-content .heading h1 {
-	font-size: 80px;
+	font-family: STXingkai;
+	font-size: 39px;
 	color: #FFF;
 	font-weight: 100;
 	text-transform: uppercase;
 }
 
 .motto {
-	font-size: 15px;
+	padding-top: 10px;
+    font-size: 23px;
 	font-style: italic;
-	font-weight: 300;
+	font-weight: 400;
 	color: #FFF;
-	max-width: 450px;
 	margin: 0 auto;
 }
 .mouse-icon {

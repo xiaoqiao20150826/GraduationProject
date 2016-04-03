@@ -17,6 +17,8 @@ function use (app) {
     var edit = require('./routes/blog/edit');
     var doEdit = require('./routes/blog/doEdit');
     var admin = require('./routes/admin');
+    var register = require('./routes/register');
+    var doRegister = require('./routes/doRegister');
     var dynamicPath = '';
     if (config.serverPlatform.platform == 'local') {
         dynamicPath = function (req) {
@@ -37,24 +39,9 @@ function use (app) {
         staticPath: path.join(__dirname, 'public'),
         dynamicPath: dynamicPath
     }));
-    app.use('/', routes);
+    app.use('/', routes, blogDoNew, article, reply, collect, tag, collectEdit, getCollectDetail, collectDoEdit, collectSingle, edit, doEdit, admin);
     app.use('/login', login);
     app.use('/doLogin', doLogin);
-    app.use('/', blogNew);
-    app.use('/', blogDoNew);
-    app.use('/', article);
-    app.use('/', reply);
-    app.use('/', collect);
-    app.use('/', tag);
-    app.use('/', collectEdit);
-    app.use('/', getCollectDetail);
-    app.use('/', collectDoEdit);
-    app.use('/', collectSingle);
-    app.use('/', edit);
-    app.use('/', doEdit);
-    app.use('/', admin);
-    var register = require('./routes/register');
-    var doRegister = require('./routes/doRegister');
     app.use('/register', register);
     app.use('/doRegister', doRegister);
 }

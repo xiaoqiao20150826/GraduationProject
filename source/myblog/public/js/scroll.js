@@ -10,7 +10,7 @@ if( !device.tablet() && !device.mobile() ) {
             $(document).ready(function() {
 
                 $(".scroll-link").click(function() {
-                    var ScrollOffset = 50;
+                    var ScrollOffset = 100;
                     //alert(ScrollOffset);
                     $("html, body").animate({
                         scrollTop: $($(this).attr("href")).offset().top-ScrollOffset + "px"
