@@ -1167,7 +1167,7 @@ text-align: center;
     padding:18px 0;
     border-bottom: 1px dashed #A29494;
 }
-.blog-container .blog-title {
+.blog-title {
     font-size: 24px;
     font-weight: bold;
 }
@@ -1216,4 +1216,17 @@ text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     color: #000;
+}
+.articleContent{
+	margin:15px 0;
+}
+.blog-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.center {
+	text-align: center;
+}
+.mgtb10 {
+	margin:10px 0;
 }

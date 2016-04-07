@@ -1,6 +1,6 @@
 var config = {
     blogName: '杨小侨的个人博客',
-    headPicture: '/images/bg.png',
+    headPicture: '/images/logo.png',
     aPageNum: 7,//分页,一页显示多少文章.
     dbUser: 'root',//dbUser填写 '' 说明数据库和本博客在同一台机器
     dbPass: '1234',
