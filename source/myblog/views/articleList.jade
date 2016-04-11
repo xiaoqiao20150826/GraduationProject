@@ -1,27 +1,34 @@
 extends layout
 
 block content
+section#content.container    
     div.row
         div.col-sm-8
             each val in doc
                 div.blog-container
                     div.blog-title
                         a(href='/article/#{val.customURL}')= val.title
-                    div.blog-wrap.blog-abstract-info
-                        span.col-sm-6= val.createTime1
-                        span.col-sm-2= '翻牌: ' + val.browse
-                        span.col-sm-2= '临幸: ' + val.reply
-                        div.col-sm-6
-                            span.blog-tag.glyphicon.glyphicon-tags
+                    div.blog-wrap.blog-abstract-info.clearfix
+                        span
+                            i.fa.fa-eye
+                            span= val.browse + ' 浏览量'  
+                        span
+                            i.fa.fa-comment
+                            span= val.reply + ' 评论' 
+                        span
+                            i.fa.fa-tag
                             each tag in val.tagArr
                                 a(href='/tag/#{tag}').blog-tag= tag
-                        div.col-sm-6
-                            span.blog-tag.glyphicon.glyphicon-folder-open
+                        span
+                            i.fa.fa-columns
                             each c in val.collectArr
                                 a(href='/collect/cid/#{c}').blog-tag= c
+                         span.time
+                            i.fa.fa-calendar
+                            span= val.createTime1
                     div.blog-abstract!= val.content
                     div.blog-bottom
-                        a.more-link(href='/article/#{val.customURL}') more>>
+                        a.more-link.btn-get-btn3(href='/article/#{val.customURL}') 阅读全文
             div.page
                 ul(class="pagination")
                     if curPage != 1
@@ -44,6 +51,5 @@ block content
                         li.disabled
                             a(href="javascript:void(0)") &raquo;
         div.col-sm-4.hidden-xs
-            include ./common/ownerInfo.jade
-            include ./common/sidebar.jade
-            include ./common/friendLinks.jade
+            include ./includes/sidebar.jade
+            include ./includes/friendLinks.jade

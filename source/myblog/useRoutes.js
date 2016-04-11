@@ -1,7 +1,8 @@
 function use (app) {
     var path = require('path');
     var ueditor = require('ueditor-nodejs');
-    var routes = require('./routes/index');
+    var index = require('./routes/index');
+    var articleList = require('./routes/articleList');
     var login = require('./routes/login');
     var doLogin = require('./routes/doLogin');
     var blogNew = require('./routes/blog/new');
@@ -39,10 +40,11 @@ function use (app) {
         staticPath: path.join(__dirname, 'public'),
         dynamicPath: dynamicPath
     }));
-    app.use('/', routes, blogDoNew, article, reply, collect, tag, collectEdit, getCollectDetail, collectDoEdit, collectSingle, edit, doEdit, admin);
+    app.use('/', index, blogDoNew, article, reply, collect, tag, collectEdit, getCollectDetail, collectDoEdit, collectSingle, edit, doEdit, admin);
     app.use('/login', login);
     app.use('/doLogin', doLogin);
     app.use('/register', register);
     app.use('/doRegister', doRegister);
+    app.use('/articleList', articleList);
 }
 module.exports = use;
