@@ -54,11 +54,11 @@ html
                                     span
                                         i.fa.fa-comment
                                         span= val.reply + ' 评论' 
-                                    span.blog-tag.glyphicon.glyphicon-tags
+                                    span
                                         i.fa.fa-tag
                                         each tag in val.tagArr
                                             a(href='/tag/#{tag}').blog-tag= tag
-                                    span.blog-tag.glyphicon.glyphicon-folder-open
+                                    span
                                         i.fa.fa-columns
                                         each c in val.collectArr
                                             a(href='/collect/cid/#{c}').blog-tag= c

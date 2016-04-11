@@ -17,32 +17,35 @@ block content
         div.row
             div.col-sm-8
                 div.row.text-center
-                    h3= article.title
-                div.row
+                    h3.content-title= article.title
+                div.row.content-tagcollect
                     div.col-sm-4
-                        span.blog-tag.glyphicon.glyphicon-tags
-                        each tag in article.tagArr
-                            a(href='/tag/#{tag}').blog-tag= tag
+                        span
+                            i.fa.fa-tag
+                            each tag in article.tagArr
+                                a(href='/tag/#{tag}').blog-tag= tag
                     div.col-sm-4
-                        span.blog-tag.glyphicon.glyphicon-folder-open
-                        each c in article.collectArr
-                            a(href='/collect/cid/#{c}').blog-tag= c
+                        span
+                            i.fa.fa-columns
+                            each c in article.collectArr
+                                a(href='/collect/cid/#{c}').blog-tag= c
                     div.col-sm-4.text-right
                         span.article-info 发表时间: #{article.createTime1}
                 div(id="article_id").row.article!= article.content
                 div.row.text-center
-                    span.article-info 翻牌: #{article.browse}&nbsp;&nbsp;
-                    span.article-info 临幸: #{article.reply}
+                    span.article-info 
+                        i.fa.fa-eye 浏览量: #{article.browse}&nbsp;&nbsp;
+                    span.article-info 
+                        i.fa.fa-comment 评论: #{article.reply}
                 div.row
-                    div.article-liuyan 留言:
+                    div.article-liuyan 评论:
                 div.row
                     each val in reply
-                        div.article-floor
+                        div.article-floor.clearfix
                             div.article-reply-info
-                                div.col-sm-8
-                                    a(href = '#{val.website}' target = '_blank')= val.nick
-                                    |  说:
-                                div.col-sm-4.text-right.article-reply-time= val.replyTime
+                                a(href = '#{val.website}' target = '_blank')= val.nick  
+                                |  说:
+                                span.fr= val.replyTime
                             div.article-reply-content!= val.content
                             each r in val.replyArr
                                 div.article-reply-floor
@@ -52,34 +55,34 @@ block content
                                             |  回复:  #{r.replyWhoNick}
                                         div.col-sm-4.text-right.article-reply-time= r.replyTime
                                     div.article-reply-content!= r.content
-                                    div.article-reply-btn
-                                        button.btn.btn-default.btn-xs(id = 'reply-#{r.replyID}'
+                                    div.article-reply-btn.fr
+                                        button.btn.btn-default.btn-ms(id = 'reply-#{r.replyID}'
                                             data-reply='#{r.dataStr}'
                                             replyWhoID="#{r.replyID}") 回复
                                     div.hide(id = 'container-#{r.replyID}')
-                            div.article-reply-btn
-                                button.btn.btn-primary.btn-xs(id = 'reply-#{val.replyID}' 
+                            div.article-reply-btn.fr
+                                button.btn.btn-primary.btn-ms(id = 'reply-#{val.replyID}' 
                                     data-reply='#{val.dataStr}'
                                     replyWhoID="#{val.replyID}") 回复
                             div.hide(id = 'container-#{val.replyID}')
                 form(class = 'form-horizontal article-reply row' action = '/reply' onsubmit='javascript: return check();')
                     div.form-group
                         label(for = 'nick' class = 'col-sm-2 control-label') 昵称:
-                        div.col-sm-10
+                        div.col-sm-8
                             input(type = 'text' id = 'nick' name = 'nick' placeholder = '输入显示的昵称').form-control
                     div.form-group
                         label(for = 'email' class = 'col-sm-2 control-label') 邮箱:
-                        div.col-sm-10
+                        div.col-sm-8
                             input(type = 'text' id = 'email' name = 'email' placeholder = '输入邮箱，不公开').form-control
                     div.form-group
                         label(for = 'website' class = 'col-sm-2 control-label') 网址:
-                        div.col-sm-10
+                        div.col-sm-8
                             input(type = 'text' id = 'website' name = 'website' placeholder = '输入个人网站，可不填').form-control
                     script(id="editor" type="text/plain" style="width:100%;height:200px;")
                     input.hide(type = 'text' id = 'articleID' name = 'articleID' value = '#{article.articleID}')/
                     input.hide(type = 'text' id = 'customURL' name = 'customURL' value = '#{article.customURL}')/
                     div.row
-                        div.col-sm-offset-10.col-sm-2
+                        div.col-sm-2.fr.mtb10
                             input(type = 'submit' class = 'btn btn-primary btn-block' id = 'reply-000' value = '提交')/
             div.col-sm-4.hidden-xs
                 //- div.blog-box
