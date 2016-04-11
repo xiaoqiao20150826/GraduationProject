@@ -7,7 +7,7 @@ var Collect = require('../../models/collect');
 var util = require('../../common/util');
 var async = require('async');
 function fail(req, res, data) {
-    res.render('blog/article', {
+    res.render('/article', {
         noArticle: true,
         data: data
     });
@@ -98,7 +98,7 @@ router.get('/article/:id', function(req, res) {
             return; 
         }
         console.log(outline)
-        res.render('blog/article', {
+        res.render('/article', {
             title: doc.title,
             article: doc,
             reply: reply,
