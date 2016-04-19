@@ -1,7 +1,8 @@
-function use (app) {
+function use(app) {
     var path = require('path');
     var ueditor = require('ueditor-nodejs');
     var index = require('./routes/index');
+    var about = require('./routes/about');
     var articleList = require('./routes/articleList');
     var login = require('./routes/login');
     var doLogin = require('./routes/doLogin');
@@ -22,7 +23,7 @@ function use (app) {
     var doRegister = require('./routes/doRegister');
     var dynamicPath = '';
     if (config.serverPlatform.platform == 'local') {
-        dynamicPath = function (req) {
+        dynamicPath = function(req) {
             if (req.session.isMe) {
                 return '/uploadimage'
             } else {
@@ -40,11 +41,26 @@ function use (app) {
         staticPath: path.join(__dirname, 'public'),
         dynamicPath: dynamicPath
     }));
-    app.use('/', index, blogDoNew, article, reply, collect, tag, collectEdit, getCollectDetail, collectDoEdit, collectSingle, edit, doEdit, admin);
+    app.use('/', routes);
+    app.use('/login', login);
+    app.use('/doLogin', doLogin);
+    app.use('/', blogNew);
+    app.use('/', blogDoNew);
+    app.use('/', article);
+    app.use('/', reply);
+    app.use('/', collect);
+    app.use('/', tag);
+    app.use('/', collectEdit);
+    app.use('/', getCollectDetail);
+    app.use('/', collectDoEdit);
+    app.use('/', collectSingle);
+    app.use('/', edit);
+    app.use('/', doEdit);
+    app.use('/', admin);
+    app.use('/', about);
     app.use('/login', login);
     app.use('/doLogin', doLogin);
     app.use('/register', register);
     app.use('/doRegister', doRegister);
-    app.use('/articleList', articleList);
 }
 module.exports = use;

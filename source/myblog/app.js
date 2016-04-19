@@ -6,6 +6,9 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var app = express();
 var session = require('express-session')
+/*var html2jade = require('html2jade')
+var document = path.join(__dirname, 'views')
+html2jade.convertDocument(document,{},function(err, jade){})*/
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 //设置引擎，将.jade扩展名的文件用./common/jade处理
