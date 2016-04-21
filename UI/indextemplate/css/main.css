@@ -1,0 +1,210 @@
+body {
+    color: #868f98;
+    font: normal 14px/1.4 "helvetica neue", tahoma, "hiragino sans gb", stheiti, "wenquanyi micro hei", \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif;
+    background: #f5f6f7;
+}
+
+.mt71 {
+    margin-top: 71px;
+}
+
+.fa {
+    padding-right: 5px;
+}
+
+.navbar-header > .logo {
+    color: #fff;
+}
+
+.blog-footer {
+    padding: 40px 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e5e5e5;
+}
+
+.articlelist .content {
+    background: #fff;
+    padding: 2em 1.3em;
+    box-shadow: 0px 1px 5px -1px rgba(104, 123, 144, 0.31);
+    border-radius: 0.3em;
+}
+
+.articlelist .content h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #556a7f;
+    text-align: left;
+    line-height: 1.4em;
+    margin: 0;
+}
+
+.content .data {
+    color: #868f98;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.8em;
+    text-align: left;
+    margin: 1em 0;
+}
+
+.data span {
+    padding-right: 15px;
+}
+
+.content .details {
+    color: #868f98;
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.8em;
+    text-align: left;
+    margin: 1em 0 0 0;
+}
+
+
+.effect-zoe {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.effect-zoe figcaption {
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    padding: 1em 0;
+    font-size: 1.35em;
+    background: rgba(0, 0, 0, 0.75);
+    color: #42A97A;
+    width: 100%;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+}
+
+.effect-zoe:hover figcaption {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.icon-links a {
+    color: #42A97A;
+    font-size: 0.8em;
+}
+
+.icon-links span {
+    padding-right: 10px;
+}
+
+.icon-links a:hover {
+    color: #337ab7;
+    text-decoration: none
+}
+
+.tag {
+    background: #24313d;
+    color: #fff;
+    border-radius: 3px;
+    margin: 0 0 20px 0;
+    border-radius: 3px;
+}
+
+.tag p {
+    background: #4678EC;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.tagscloud {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+}
+
+.tagscloud a {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: #fff;
+    font-family: Arial;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.tagscloud a:hover {
+    color: red;
+}
+
+#waterfall {
+    position: relative;
+    margin: 0 5px;
+}
+
+.mobilefigcaption > a {
+    float: right;
+}
+
+
+/* Carousel base class */
+
+.carousel {
+    height: 270px;
+    margin: 0 10px 20px;
+}
+
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
+    z-index: 10;
+}
+
+
+/* Declare heights because of positioning of img element */
+
+.carousel .item {
+    height: 270px;
+    background-color: #777;
+}
+
+.carousel-inner > .item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: inherit;
+    height: 270px;
+}
+
+
+.article-title {
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: normal;
+    color: #000;
+}
+.article p.data {
+    color: #428bca;
+}
+.article p.details {
+    font-size: 15px;
+    text-indent: 31px;
+    color: #000;
+}
+
+@media (max-width: 786px) {
+    .carousel {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+}

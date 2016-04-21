@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>博客首页</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animation.css" rel="stylesheet">
+    <link href="css/pace-theme-barber-shop.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="pace"></div>
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo" href="#">杨小侨blog</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse pull-right">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/"><i class="fa fa-home"></i><span>首页</span></a></li>
+                    <li><a href="/about"><i class="fa fa-bullhorn"></i><span>关于我</span></a></li>
+                </ul>
+            </div>
+            <!-- /.nav-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- /.navbar -->
+    <div class="container mt71">
+        <div class="row">
+            <div class="col-xs-12 col-sm-9">
+                <div id="myCarousel" class="row carousel slide a-fadeinL" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img class="first-slide" src="images/slide1.jpg" alt="First slide">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <p class="a-bounceinT">通过阅读来获取思想独立，写出自己对生活的见解</p>
+                                    <p class="a-fadeinR">Let's get independent thought by reading and write their insights on life.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="second-slide" src="images/slide2.jpg" alt="Second slide">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <p class="a-bounceinT">你回首看得越远，你向前也会看得越远</p>
+                                    <p class="a-fadeinR">The farther backward you can look, the farther forward you will see.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="third-slide" src="images/slide3.jpg" alt="Third slide">
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <p class="a-bounceinT">昨天已经过去，明天还没到来。只有今天是一份礼物</p>
+                                    <p class="a-fadeinR">Yesterday is history, tomorrow is a mystery, but today is a gift.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        <span class="fa icon-angle-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        <span class="fa icon-angle-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="row" id="waterfall">
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>软件开发架构分析</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">现在软件开发的整体架构主要分为B/S架构与C/S架构 B/S结构（Browser/Server，浏览器/服务器模式），客户机上只要安装一个浏览器（Browser英 ['braʊzə]美 ['braʊzɚ]），如Netscape Navigator或Internet Explorer，服务器安装SQL Server、Oracle、MYSQL等数据库。浏览器通过Web Server 同数据库进行数据交互。
+                            </p>
+                            <p class="visible-xs mobilefigcaption"><a href="">详细阅读</a><span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span></p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>前端开发工程师 = 装修匠 ？</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">我们需要反思一个问题：什么才是正真意义上的前端开发？ 前端开发工程是在我国发展的瓶颈：前端“装修匠”的定位，市场上普遍缺少高端的产品需求。
+                            </p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>事件驱动编程</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">介绍Javascript的事件驱动编程概念） 1.1基本概念 一、 事件 事件是指可以被浏览器识别的，发生在页面上的用户动作或状态变化。其中： 用户动作：用户对页面的鼠标或键盘操作。如：click，keypress 状态变化：页面的状态发生变化。例如：load，change，resize
+                            </p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>UI跟前端开发的区别</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">软件设计可分为两个部分：编码设计与UI设计。 UI: user interface （用户 界面）从字面上看是用户与界面2个组成部分，但实际上还包括用户与界面之间的交互关系。界面设计，在漫长的软件发展中，界面设计工作一直没有被重视起来。做界面设计的人也被贬义的称为“美工”。界面设计不是单纯的美术绘画，他需要定位使用者、使用环境、使用方式并且为最终用户而设计，是纯粹的科学性的艺术设计。检验一个界面的标准既不是某个项目开发组领导的意见也不是项目成员投票的结果，而是最终用户的感受。所以界面设计要和用户研究紧密结合，是一个不断为最终用户设计满意视觉效果的过程。
+                            </p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>Heading</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                            </p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>Heading</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+                            </p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>软件开发架构分析</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">现在软件开发的整体架构主要分为B/S架构与C/S架构 B/S结构（Browser/Server，浏览器/服务器模式），客户机上只要安装一个浏览器（Browser英 ['braʊzə]美 ['braʊzɚ]），如Netscape Navigator或Internet Explorer，服务器安装SQL Server、Oracle、MYSQL等数据库。浏览器通过Web Server 同数据库进行数据交互。
+                            </p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                    <div class="effect-zoe articlelist a-fadeinT">
+                        <div class="content">
+                            <h2>UI跟前端开发的区别</h2>
+                            <p class="data"><span><i class="fa fa-eye"></i>浏览量 30</span><span><i class="fa fa-comment"></i>评论数 60</span></p>
+                            <p class="details">软件设计可分为两个部分：编码设计与UI设计。 UI: user interface （用户 界面）从字面上看是用户与界面2个组成部分，但实际上还包括用户与界面之间的交互关系。界面设计，在漫长的软件发展中，界面设计工作一直没有被重视起来。做界面设计的人也被贬义的称为“美工”。界面设计不是单纯的美术绘画，他需要定位使用者、使用环境、使用方式并且为最终用户而设计，是纯粹的科学性的艺术设计。检验一个界面的标准既不是某个项目开发组领导的意见也不是项目成员投票的结果，而是最终用户的感受。所以界面设计要和用户研究紧密结合，是一个不断为最终用户设计满意视觉效果的过程。
+                            </p>
+                        </div>
+                        <figcaption>
+                            <h2 class="hidden-xs">详细阅读</h2>
+                            <p class="icon-links">
+                                <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
+                                <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
+                            </p>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 a-fadeinR">
+                <div class="tag">
+                    <p>标签云</p>
+                    <div class="tagscloud" id="tagscloud1">
+                        <a href="#">HTMl</a>
+                        <a href="#">Javascript</a>
+                        <a href="#">心情</a>
+                        <a href="#">NodeJS</a>
+                        <a href="#">技术</a>
+                        <a href="#">学习</a>
+                        <a href="#">皮囊</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                        <a href="#">HTMl</a>
+                        <a href="#">Javascript</a>
+                        <a href="#">心情</a>
+                        <a href="#">NodeJS</a>
+                        <a href="#">技术</a>
+                        <a href="#">学习</a>
+                        <a href="#">皮囊</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                    </div>
+                </div>
+                <div class="tag">
+                    <p>文集云</p>
+                    <div class="tagscloud" id="tagscloud2">
+                        <a href="#">Link(1)</a>
+                        <a href="#">Link(2)</a>
+                        <a href="#">Link(3)</a>
+                        <a href="#">Link(4)</a>
+                        <a href="#">Link(5)</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                        <a href="#">Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="blog-footer">
+            <div class="container">
+                <p>作者： 杨小侨 </p>
+            </div>
+        </footer>
+        <script src="js/jquery-2.1.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src='js/tagscloud.js'></script>
+        <script src="js/elastic-columns.min.js"></script>
+        <script src="js/pace.min.js"></script>
+        <script>
+        $(function() {
+            if ($(window).width() > 768) {
+                $('#waterfall').elasticColumns({
+                    columns: 3,
+                    innerMargin: 20,
+                    outerMargin: 10
+
+                });
+            } else {
+                $('#waterfall').elasticColumns({
+                    columns: 1,
+                    innerMargin: 10,
+                    outerMargin: 5
+
+                });
+            }
+        })
+        </script>
+</body>
+
+</html>
