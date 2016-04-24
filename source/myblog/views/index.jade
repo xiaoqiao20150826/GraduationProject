@@ -1,84 +1,93 @@
-doctype html
-html
-    head
-        link(rel='stylesheet',href='/css/pace.preloader.css')
-        link(rel='stylesheet',href='/css/owl.carousel.css')
-        link(rel='stylesheet',href='/css/home-slider.css')
-        include ./includes/head
-    body
-        include ./includes/minheader
-        section#mastwrap.mast-wrap.sliding
-            section#home.home-section.page-section.highlight
-                section.inner-section
-                    div.home-carousel
-                        div#home-owl-demo.home-owl
-                            div.item
-                                div.bg1.text-center
-                                    div.shadow
-                                        div.home-owl-content.col-md-offset-2.col-md-8
-                                            div.heading
-                                                h1 通过阅读来获取思想独立，写出自己对生活的见解
-                                            div.motto
-                                                span.text Let's get independent thought by reading and write their insights on life.
-                            div.item
-                                div.bg2.text-center
-                                     div.shadow
-                                        div.home-owl-content.col-md-offset-2.col-md-8
-                                            div.heading
-                                                h1 你回首看得越远，你向前也会看得越远
-                                            div.motto
-                                                span.text The farther backward you can look, the farther forward you will see.
-                            div.item
-                                div.bg3.text-center
-                                     div.shadow
-                                        div.home-owl-content.col-md-offset-2.col-md-8
-                                            div.heading
-                                                h1 昨天已经过去，明天还没到来。只有今天是一份礼物
-                                            div.motto
-                                                span.text Yesterday is history, tomorrow is a mystery, but today is a gift. 
-                    a.scroll-link(data-soffset="50" href="#content")
-                        div.mouse-icon
-                            div.scroll-down
-            include ./includes/header
-            section#content.container    
-                div.row
-                    div.col-sm-8
-                        each val in doc
-                            div.blog-container
-                                div.blog-title
-                                    a(href='/article/#{val.customURL}')= val.title
-                                div.blog-wrap.blog-abstract-info.clearfix
-                                    span
-                                        i.fa.fa-eye
-                                        span= val.browse + ' 浏览量'  
-                                    span
-                                        i.fa.fa-comment
-                                        span= val.reply + ' 评论' 
-                                    span
-                                        i.fa.fa-tag
-                                        each tag in val.tagArr
-                                            a(href='/tag/#{tag}').blog-tag= tag
-                                    span
-                                        i.fa.fa-columns
-                                        each c in val.collectArr
-                                            a(href='/collect/cid/#{c}').blog-tag= c
-                                     span.time
-                                        i.fa.fa-calendar
-                                        span= val.createTime1
-                                div.blog-abstract!= val.content
-                                div.blog-bottom
-                                    a.more-link.btn-get-btn3(href='/article/#{val.customURL}') 阅读全文
-                        div.blog-container
-                                a 查看更多
-                    div.col-sm-4.hidden-xs
-                        include ./includes/sidebar.jade
-                        include ./includes/friendLinks.jade
-            include ./includes/footer
-        script(src='/js/pace.min.js')
-        include ./includes/js
-        script(src='/js/slidingmenu.js')
-        script(src='/js/scroll.js')
-        
+extends layout
 
-
-
+block content
+  .col-xs-12.col-sm-9
+    #myCarousel.row.carousel.slide.a-fadeinL(data-ride='carousel')
+      // Indicators
+      ol.carousel-indicators
+        li.active(data-target='#myCarousel', data-slide-to='0')
+        |                         
+        li(data-target='#myCarousel', data-slide-to='1')
+        |                         
+        li(data-target='#myCarousel', data-slide-to='2')
+      |                     
+      .carousel-inner(role='listbox')
+        .item.active
+          img.first-slide(src='images/slide1.jpg', alt='First slide')
+          |                             
+          .container
+            .carousel-caption
+              p.a-bounceinT &#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x6765;&#x83B7;&#x53D6;&#x601D;&#x60F3;&#x72EC;&#x7ACB;&#xFF0C;&#x5199;&#x51FA;&#x81EA;&#x5DF1;&#x5BF9;&#x751F;&#x6D3B;&#x7684;&#x89C1;&#x89E3;
+              |                                     
+              p.a-fadeinR Let&apos;s get independent thought by reading and write their insights on life.
+        |                         
+        .item
+          img.second-slide(src='images/slide2.jpg', alt='Second slide')
+          |                             
+          .container
+            .carousel-caption
+              p.a-bounceinT &#x4F60;&#x56DE;&#x9996;&#x770B;&#x5F97;&#x8D8A;&#x8FDC;&#xFF0C;&#x4F60;&#x5411;&#x524D;&#x4E5F;&#x4F1A;&#x770B;&#x5F97;&#x8D8A;&#x8FDC;
+              |                                     
+              p.a-fadeinR The farther backward you can look, the farther forward you will see.
+        |                         
+        .item
+          img.third-slide(src='images/slide3.jpg', alt='Third slide')
+          |                             
+          .container
+            .carousel-caption
+              p.a-bounceinT &#x6628;&#x5929;&#x5DF2;&#x7ECF;&#x8FC7;&#x53BB;&#xFF0C;&#x660E;&#x5929;&#x8FD8;&#x6CA1;&#x5230;&#x6765;&#x3002;&#x53EA;&#x6709;&#x4ECA;&#x5929;&#x662F;&#x4E00;&#x4EFD;&#x793C;&#x7269;
+              |                                     
+              p.a-fadeinR Yesterday is history, tomorrow is a mystery, but today is a gift.
+      |                     
+      a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+        span.fa.icon-angle-left(aria-hidden='true')
+        |                         
+        span.sr-only Previous
+      |                     
+      a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+        span.fa.icon-angle-right(aria-hidden='true')
+        |                         
+        span.sr-only Next
+    |                 
+    #waterfall.row
+      each val in doc
+        .effect-zoe.articlelist.a-fadeinT
+          .content
+            h2= val.title
+            |                             
+            p.data
+              span
+                i.fa.fa-eye= ' 浏览量 ' + val.browse
+              span
+                i.fa.fa-comment= ' 评论数 ' + val.reply
+            |                             
+            p.details!= val.content
+            |                             
+            p.visible-xs.mobilefigcaption
+              a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+              each tag in val.tagArr
+                span
+                  a(href='/tag/#{tag}')
+                    i.fa.fa-tag= ' ' + tag
+              each c in val.collectArr                                 
+                span
+                  a(href='/collect/cid/#{c}')
+                    i.fa.fa-columns= ' ' + c
+          |                         
+          figcaption
+            h2.hidden-xs
+              a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+            |                             
+            p.icon-links
+              each tag in val.tagArr
+                span
+                  a(href='/tag/#{tag}')
+                    i.fa.fa-tag= ' ' + tag
+              each c in val.collectArr                                 
+                span
+                  a(href='/collect/cid/#{c}')
+                    i.fa.fa-columns= ' ' + c
+        |                      
+  include ./includes/sidebar           
+block js
+  script(src='/js/tagscloud.js') 

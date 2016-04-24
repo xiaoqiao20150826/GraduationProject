@@ -1,71 +1,60 @@
 extends ../layout
-block cssjs
-    script(type="text/javascript", src="/ueditor/ueditor.config.js")
-    script(type="text/javascript", src="/ueditor/ueditor.all.min.js")
-    script(type="text/javascript", charset='utf-8' src="/ueditor/lang/zh-cn/zh-cn.js")
-    script(type='text/javascript' src = '/syntaxhighlighter/scripts/shCore.js')
-    //script(type='text/javascript' src = '/syntaxhighlighter/scripts/shBrushJScript.js')
-    script(type='text/javascript' src = '/syntaxhighlighter/scripts/shBrushCpp.js')
-    script(type='text/javascript' src = '/syntaxhighlighter/scripts/shAutoloader.js')
-    link(rel='stylesheet' href = '/syntaxhighlighter/styles/shCoreMidnight.css')
 block content
     if noArticle
-        div.row.text-center
+        div.row.text-center.a-fadeinR
             h4 #{data}
                 a(href='/') 去看看其他文章吧
     else
-        div.row
-            div.col-sm-8
-                div.row.text-center
-                    h3.content-title= article.title
-                div.row.content-tagcollect
-                    div.col-sm-4
-                        span
-                            i.fa.fa-tag
-                            each tag in article.tagArr
-                                a(href='/tag/#{tag}').blog-tag= tag
-                    div.col-sm-4
-                        span
-                            i.fa.fa-columns
-                            each c in article.collectArr
-                                a(href='/collect/cid/#{c}').blog-tag= c
-                    div.col-sm-4.text-right
-                        span.article-info 发表时间: #{article.createTime1}
-                div(id="article_id").row.article!= article.content
-                div.row.text-center
-                    span.article-info 
-                        i.fa.fa-eye 浏览量: #{article.browse}&nbsp;&nbsp;
-                    span.article-info 
-                        i.fa.fa-comment 评论: #{article.reply}
-                div.row
-                    div.article-liuyan 评论:
-                div.row
-                    each val in reply
+        .col-xs-12.col-sm-9.a-fadeinL
+          .row
+            .article
+              h2.article-title= article.title
+              |                         
+              p.data
+                span
+                  i.fa.fa-eye
+                  | &#x6D4F;&#x89C8;&#x91CF; #{article.browse}
+                span
+                  i.fa.fa-comment
+                  | &#x8BC4;&#x8BBA;&#x6570; #{article.reply}
+                each tag in article.tagArr                             
+                    span
+                      a(href='/tag/#{tag}')
+                        i.fa.fa-tag= ' ' + tag
+                each c in article.collectArr                           
+                    span
+                        a(href='/collect/cid/#{c}') 
+                            i.fa.fa-columns= '   ' + c                        
+              p.details(id="article_id")!= article.content
+            .comment
+                div.article-comment 评论:
+                each val in reply
                         div.article-floor.clearfix
                             div.article-reply-info
                                 a(href = '#{val.website}' target = '_blank')= val.nick  
                                 |  说:
-                                span.fr= val.replyTime
+                                span.fr.pull-right.co868f98
+                                    i.fa.fa-calendar= val.replyTime
                             div.article-reply-content!= val.content
                             each r in val.replyArr
                                 div.article-reply-floor
                                     div.article-reply-info
-                                        div.col-sm-8
-                                            a(href = '#{r.website}' target = '_blank')= r.nick
+                                        a(href = '#{r.website}' target = '_blank')= r.nick
                                             |  回复:  #{r.replyWhoNick}
-                                        div.col-sm-4.text-right.article-reply-time= r.replyTime
+                                        span.pull-right.co868f98
+                                            i.fa.fa-calendar= r.replyTime
                                     div.article-reply-content!= r.content
-                                    div.article-reply-btn.fr
+                                    div.article-reply-btn.fr.text-right
                                         button.btn.btn-default.btn-ms(id = 'reply-#{r.replyID}'
                                             data-reply='#{r.dataStr}'
                                             replyWhoID="#{r.replyID}") 回复
                                     div.hide(id = 'container-#{r.replyID}')
-                            div.article-reply-btn.fr
-                                button.btn.btn-primary.btn-ms(id = 'reply-#{val.replyID}' 
+                            div.article-reply-btn.fr.pull-right
+                                button.btn.btn-primary.btn-ms.mt10(id = 'reply-#{val.replyID}' 
                                     data-reply='#{val.dataStr}'
                                     replyWhoID="#{val.replyID}") 回复
                             div.hide(id = 'container-#{val.replyID}')
-                form(class = 'form-horizontal article-reply row' action = '/reply' onsubmit='javascript: return check();')
+                form(class = 'form-horizontal' action = '/reply' onsubmit='javascript: return check();')
                     div.form-group
                         label(for = 'nick' class = 'col-sm-2 control-label') 昵称:
                         div.col-sm-8
@@ -78,18 +67,22 @@ block content
                         label(for = 'website' class = 'col-sm-2 control-label') 网址:
                         div.col-sm-8
                             input(type = 'text' id = 'website' name = 'website' placeholder = '输入个人网站，可不填').form-control
-                    script(id="editor" type="text/plain" style="width:100%;height:200px;")
+                    script(id="editor" type="text/plain" style="height:200px;")
                     input.hide(type = 'text' id = 'articleID' name = 'articleID' value = '#{article.articleID}')/
                     input.hide(type = 'text' id = 'customURL' name = 'customURL' value = '#{article.customURL}')/
                     div.row
-                        div.col-sm-2.fr.mtb10
-                            input(type = 'submit' class = 'btn btn-primary btn-block' id = 'reply-000' value = '提交')/
-            div.col-sm-4.hidden-xs
-                //- div.blog-box
-                //-     div.blog-box-title
-                //-         div.blog-box-titlein 文章大纲
-                //-     div.outline-container!= outline
-                include ../includes/sidebar.jade
-                include ../includes/friendLinks.jade
-        script(type ='text/javascript' src = '/js/article.js')
+                        div.col-sm-2.fr.mt10.pull-right
+                            input(type = 'submit' class = 'btn btn-danger btn-block' id = 'reply-000' value = '提交')/    
+        include ../includes/sidebar
+block js
+    script(type="text/javascript", src="/ueditor/ueditor.config.js")
+    script(type="text/javascript", src="/ueditor/ueditor.all.min.js")
+    script(type="text/javascript", charset='utf-8' src="/ueditor/lang/zh-cn/zh-cn.js")
+    script(type='text/javascript' src = '/syntaxhighlighter/scripts/shCore.js')
+    //script(type='text/javascript' src = '/syntaxhighlighter/scripts/shBrushJScript.js')
+    script(type='text/javascript' src = '/syntaxhighlighter/scripts/shBrushCpp.js')
+    script(type='text/javascript' src = '/syntaxhighlighter/scripts/shAutoloader.js')
+    link(rel='stylesheet' href = '/syntaxhighlighter/styles/shCoreMidnight.css')
+    script(type ='text/javascript' src = '/js/article.js')
+    script(src='/js/tagscloud.js')
                     

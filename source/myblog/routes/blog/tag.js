@@ -38,11 +38,12 @@ router.get('/tag/:tag', function(req, res) {
         }
     ], function (err, doc, tags, collects) {
         res.render('blog/tag', {
-            title: config.blogName,
+            title: "标签列表页：" + tag,
             isMe : req.session.isMe,
             doc: doc,
             tags: tags,
-            collects: collects
+            collects: collects,
+            tag: tag
         });
     });    
 });

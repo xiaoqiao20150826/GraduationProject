@@ -41,7 +41,7 @@ function use(app) {
         staticPath: path.join(__dirname, 'public'),
         dynamicPath: dynamicPath
     }));
-    app.use('/', routes);
+    app.use('/', index);
     app.use('/login', login);
     app.use('/doLogin', doLogin);
     app.use('/', blogNew);

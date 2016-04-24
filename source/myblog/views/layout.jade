@@ -1,13 +1,16 @@
 doctype html
-html
-    head
-        include ./includes/head
-        block cssjs
-    body
-        include ./includes/header
-        div.container
-            block content
-        include ./includes/footer
-        include ./includes/js
+html(lang='zh-CN')
+  head
+    include ./includes/head
+    block css
+  body
+    .pace
+    include ./includes/header
+    .container.mt71
+      .row
+        block content
+    include ./includes/footer
+    include ./includes/js
+    block js
 
 

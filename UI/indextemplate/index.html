@@ -8,10 +8,10 @@
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>博客首页</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animation.css" rel="stylesheet">
     <link href="css/pace-theme-barber-shop.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand logo" href="#">杨小侨blog</a>
+                <a class="navbar-brand logo" href="#">杨小侨Blog</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse pull-right">
                 <ul class="nav navbar-nav">
@@ -97,7 +97,7 @@
                                 <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span></p>
                         </div>
                         <figcaption>
-                            <h2 class="hidden-xs">详细阅读</h2>
+                            <h2 class="hidden-xs"><a href="">详细阅读</a></h2>
                             <p class="icon-links">
                                 <span><a href="#"><i class="fa fa-tag"></i>HTML5</a></span>
                                 <span><a href="#"><i class="fa fa-columns"></i>前端技术</a></span>
@@ -213,7 +213,7 @@
             </div>
             <div class="col-xs-12 col-sm-3 a-fadeinR">
                 <div class="tag">
-                    <p>标签云</p>
+                    <p><a href="">标签云</a></p>
                     <div class="tagscloud" id="tagscloud1">
                         <a href="#">HTMl</a>
                         <a href="#">Javascript</a>
@@ -238,7 +238,7 @@
                     </div>
                 </div>
                 <div class="tag">
-                    <p>文集云</p>
+                    <p><a href="">文集云</a></p>
                     <div class="tagscloud" id="tagscloud2">
                         <a href="#">Link(1)</a>
                         <a href="#">Link(2)</a>
@@ -264,6 +264,8 @@
         <script src='js/tagscloud.js'></script>
         <script src="js/elastic-columns.min.js"></script>
         <script src="js/pace.min.js"></script>
+        <script src="js/manhuatoTop.1.0.js"></script>
+        
         <script>
         $(function() {
             if ($(window).width() > 768) {
@@ -281,7 +283,14 @@
 
                 });
             }
-        })
+
+
+            $(window).manhuatoTop({
+        showHeight : 100,
+        speed : 500 
+         })
+    });
+       
         </script>
 </body>
 

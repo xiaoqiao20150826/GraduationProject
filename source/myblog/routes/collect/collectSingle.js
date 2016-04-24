@@ -50,7 +50,7 @@ router.get('/collect/cid/:id', function(req, res) {
         }
         ], function (err, doc, tags, collects) {
             res.render('collect/collectSingle', {
-                title: collect,
+                title: "文集列表页：" + collect,
                 doc: doc,
                 collects: collects,
                 tags: tags,

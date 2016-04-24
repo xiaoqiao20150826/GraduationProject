@@ -1,29 +1,33 @@
 extends ../layout
-
 block content
-    div.row
-        div.col-sm-8
-            center
-                h3= collect
-            each val in doc
-                div.blog-container
-                    div.blog-title
-                        a(href='/article/#{val.customURL}')= val.title
-                    div.blog-wrap.blog-abstract-info
-                        span.col-sm-6= val.createTime1
-                        span.col-sm-2= '翻牌: ' + val.browse
-                        span.col-sm-2= '临幸: ' + val.reply
-                        div.col-sm-6
-                            span.blog-tag.glyphicon.glyphicon-tags
-                            each tag in val.tagArr
-                                a(href='/tag/#{tag}').blog-tag= tag
-                        div.col-sm-6
-                            span.blog-tag.glyphicon.glyphicon-folder-open
-                            each c in val.collectArr
-                                a(href='/collect/cid/#{c}').blog-tag= c
-                    div.blog-abstract!= val.content
-                    div.blog-bottom
-                        a.more-link(href='/article/#{val.customURL}') more>>
-        div.col-sm-4.hidden-xs
-            include ../common/sidebar.jade
-            include ../common/friendLinks.jade
+  .col-xs-12.col-sm-9
+    h3.text-center.blogmark= collect           
+    .row
+      each val in doc
+        .effect-zoe.articlelist.mb20.a-fadeinT
+          .content
+            h2= val.title
+            |                             
+            p.data
+              span
+                i.fa.fa-eye= ' 浏览量 ' + val.browse
+              span
+                i.fa.fa-comment= ' 评论数 ' + val.reply
+              each tag in val.tagArr
+                span
+                  a(href='/tag/#{tag}')
+                    i.fa.fa-tag= ' ' + tag
+              each c in val.collectArr                                 
+                span
+                  a(href='/collect/cid/#{c}')
+                    i.fa.fa-columns= ' ' + c                                            
+            p.details!= val.content
+            |                             
+            p.visible-xs.mobilefigcaption
+              a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+          figcaption
+            h2.hidden-xs
+              a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;                   
+  include ../includes/sidebar           
+block js
+  script(src='/js/tagscloud.js')

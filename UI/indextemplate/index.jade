@@ -1,0 +1,455 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='utf-8')
+    |     
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    |     
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    // 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！
+    title &#x535A;&#x5BA2;&#x9996;&#x9875;
+    |     
+    link(href='css/bootstrap.min.css', rel='stylesheet')
+    |     
+    link(href='css/font-awesome.min.css', rel='stylesheet')
+    |     
+    link(href='css/animation.css', rel='stylesheet')
+    |     
+    link(href='css/pace-theme-barber-shop.css', rel='stylesheet')
+    |     
+    link(href='css/main.css', rel='stylesheet')
+  body
+    .pace
+    |     
+    nav.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+          |                 
+          a.navbar-brand.logo(href='#') &#x6768;&#x5C0F;&#x4FA8;Blog
+        |             
+        #navbar.collapse.navbar-collapse.pull-right
+          ul.nav.navbar-nav
+            li.active
+              a(href='/')
+                i.fa.fa-home
+                span &#x9996;&#x9875;
+            |                     
+            li
+              a(href='/about')
+                i.fa.fa-bullhorn
+                span &#x5173;&#x4E8E;&#x6211;
+        // /.nav-collapse
+      // /.container
+    // /.navbar
+    .container.mt71
+      .row
+        .col-xs-12.col-sm-9
+          #myCarousel.row.carousel.slide.a-fadeinL(data-ride='carousel')
+            // Indicators
+            ol.carousel-indicators
+              li.active(data-target='#myCarousel', data-slide-to='0')
+              |                         
+              li(data-target='#myCarousel', data-slide-to='1')
+              |                         
+              li(data-target='#myCarousel', data-slide-to='2')
+            |                     
+            .carousel-inner(role='listbox')
+              .item.active
+                img.first-slide(src='images/slide1.jpg', alt='First slide')
+                |                             
+                .container
+                  .carousel-caption
+                    p.a-bounceinT &#x901A;&#x8FC7;&#x9605;&#x8BFB;&#x6765;&#x83B7;&#x53D6;&#x601D;&#x60F3;&#x72EC;&#x7ACB;&#xFF0C;&#x5199;&#x51FA;&#x81EA;&#x5DF1;&#x5BF9;&#x751F;&#x6D3B;&#x7684;&#x89C1;&#x89E3;
+                    |                                     
+                    p.a-fadeinR Let&apos;s get independent thought by reading and write their insights on life.
+              |                         
+              .item
+                img.second-slide(src='images/slide2.jpg', alt='Second slide')
+                |                             
+                .container
+                  .carousel-caption
+                    p.a-bounceinT &#x4F60;&#x56DE;&#x9996;&#x770B;&#x5F97;&#x8D8A;&#x8FDC;&#xFF0C;&#x4F60;&#x5411;&#x524D;&#x4E5F;&#x4F1A;&#x770B;&#x5F97;&#x8D8A;&#x8FDC;
+                    |                                     
+                    p.a-fadeinR The farther backward you can look, the farther forward you will see.
+              |                         
+              .item
+                img.third-slide(src='images/slide3.jpg', alt='Third slide')
+                |                             
+                .container
+                  .carousel-caption
+                    p.a-bounceinT &#x6628;&#x5929;&#x5DF2;&#x7ECF;&#x8FC7;&#x53BB;&#xFF0C;&#x660E;&#x5929;&#x8FD8;&#x6CA1;&#x5230;&#x6765;&#x3002;&#x53EA;&#x6709;&#x4ECA;&#x5929;&#x662F;&#x4E00;&#x4EFD;&#x793C;&#x7269;
+                    |                                     
+                    p.a-fadeinR Yesterday is history, tomorrow is a mystery, but today is a gift.
+            |                     
+            a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+              span.fa.icon-angle-left(aria-hidden='true')
+              |                         
+              span.sr-only Previous
+            |                     
+            a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+              span.fa.icon-angle-right(aria-hidden='true')
+              |                         
+              span.sr-only Next
+          |                 
+          #waterfall.row
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 &#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x67B6;&#x6784;&#x5206;&#x6790;
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | &#x73B0;&#x5728;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x7684;&#x6574;&#x4F53;&#x67B6;&#x6784;&#x4E3B;&#x8981;&#x5206;&#x4E3A;B/S&#x67B6;&#x6784;&#x4E0E;C/S&#x67B6;&#x6784; B/S&#x7ED3;&#x6784;&#xFF08;Browser/Server&#xFF0C;&#x6D4F;&#x89C8;&#x5668;/&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;&#xFF09;&#xFF0C;&#x5BA2;&#x6237;&#x673A;&#x4E0A;&#x53EA;&#x8981;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#xFF08;Browser&#x82F1; [&apos;bra&#x28A;z&#x259;]&#x7F8E; [&apos;bra&#x28A;z&#x25A;]&#xFF09;&#xFF0C;&#x5982;Netscape Navigator&#x6216;Internet Explorer&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5B89;&#x88C5;SQL Server&#x3001;Oracle&#x3001;MYSQL&#x7B49;&#x6570;&#x636E;&#x5E93;&#x3002;&#x6D4F;&#x89C8;&#x5668;&#x901A;&#x8FC7;Web Server &#x540C;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#x3002;
+                |                             
+                p.visible-xs.mobilefigcaption
+                  a(href='') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+              |                         
+              figcaption
+                h2.hidden-xs
+                  a(href='') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+            |                     
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 &#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5DE5;&#x7A0B;&#x5E08; = &#x88C5;&#x4FEE;&#x5320; &#xFF1F;
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | &#x6211;&#x4EEC;&#x9700;&#x8981;&#x53CD;&#x601D;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;&#x4EC0;&#x4E48;&#x624D;&#x662F;&#x6B63;&#x771F;&#x610F;&#x4E49;&#x4E0A;&#x7684;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#xFF1F; &#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x5DE5;&#x7A0B;&#x662F;&#x5728;&#x6211;&#x56FD;&#x53D1;&#x5C55;&#x7684;&#x74F6;&#x9888;&#xFF1A;&#x524D;&#x7AEF;&ldquo;&#x88C5;&#x4FEE;&#x5320;&rdquo;&#x7684;&#x5B9A;&#x4F4D;&#xFF0C;&#x5E02;&#x573A;&#x4E0A;&#x666E;&#x904D;&#x7F3A;&#x5C11;&#x9AD8;&#x7AEF;&#x7684;&#x4EA7;&#x54C1;&#x9700;&#x6C42;&#x3002;
+              |                         
+              figcaption
+                h2.hidden-xs &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+            |                     
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 &#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7F16;&#x7A0B;
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | &#x4ECB;&#x7ECD;Javascript&#x7684;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7F16;&#x7A0B;&#x6982;&#x5FF5;&#xFF09; 1.1&#x57FA;&#x672C;&#x6982;&#x5FF5; &#x4E00;&#x3001; &#x4E8B;&#x4EF6; &#x4E8B;&#x4EF6;&#x662F;&#x6307;&#x53EF;&#x4EE5;&#x88AB;&#x6D4F;&#x89C8;&#x5668;&#x8BC6;&#x522B;&#x7684;&#xFF0C;&#x53D1;&#x751F;&#x5728;&#x9875;&#x9762;&#x4E0A;&#x7684;&#x7528;&#x6237;&#x52A8;&#x4F5C;&#x6216;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x3002;&#x5176;&#x4E2D;&#xFF1A; &#x7528;&#x6237;&#x52A8;&#x4F5C;&#xFF1A;&#x7528;&#x6237;&#x5BF9;&#x9875;&#x9762;&#x7684;&#x9F20;&#x6807;&#x6216;&#x952E;&#x76D8;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#xFF1A;click&#xFF0C;keypress &#x72B6;&#x6001;&#x53D8;&#x5316;&#xFF1A;&#x9875;&#x9762;&#x7684;&#x72B6;&#x6001;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x3002;&#x4F8B;&#x5982;&#xFF1A;load&#xFF0C;change&#xFF0C;resize
+              |                         
+              figcaption
+                h2.hidden-xs &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+            |                     
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 UI&#x8DDF;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x7684;&#x533A;&#x522B;
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | &#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;&#x53EF;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x7F16;&#x7801;&#x8BBE;&#x8BA1;&#x4E0E;UI&#x8BBE;&#x8BA1;&#x3002; UI: user interface &#xFF08;&#x7528;&#x6237; &#x754C;&#x9762;&#xFF09;&#x4ECE;&#x5B57;&#x9762;&#x4E0A;&#x770B;&#x662F;&#x7528;&#x6237;&#x4E0E;&#x754C;&#x9762;2&#x4E2A;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x8FD8;&#x5305;&#x62EC;&#x7528;&#x6237;&#x4E0E;&#x754C;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#x5173;&#x7CFB;&#x3002;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#xFF0C;&#x5728;&#x6F2B;&#x957F;&#x7684;&#x8F6F;&#x4EF6;&#x53D1;&#x5C55;&#x4E2D;&#xFF0C;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x5DE5;&#x4F5C;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x88AB;&#x91CD;&#x89C6;&#x8D77;&#x6765;&#x3002;&#x505A;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x7684;&#x4EBA;&#x4E5F;&#x88AB;&#x8D2C;&#x4E49;&#x7684;&#x79F0;&#x4E3A;&ldquo;&#x7F8E;&#x5DE5;&rdquo;&#x3002;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x4E0D;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x7F8E;&#x672F;&#x7ED8;&#x753B;&#xFF0C;&#x4ED6;&#x9700;&#x8981;&#x5B9A;&#x4F4D;&#x4F7F;&#x7528;&#x8005;&#x3001;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#x3001;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5E76;&#x4E14;&#x4E3A;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x800C;&#x8BBE;&#x8BA1;&#xFF0C;&#x662F;&#x7EAF;&#x7CB9;&#x7684;&#x79D1;&#x5B66;&#x6027;&#x7684;&#x827A;&#x672F;&#x8BBE;&#x8BA1;&#x3002;&#x68C0;&#x9A8C;&#x4E00;&#x4E2A;&#x754C;&#x9762;&#x7684;&#x6807;&#x51C6;&#x65E2;&#x4E0D;&#x662F;&#x67D0;&#x4E2A;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x7EC4;&#x9886;&#x5BFC;&#x7684;&#x610F;&#x89C1;&#x4E5F;&#x4E0D;&#x662F;&#x9879;&#x76EE;&#x6210;&#x5458;&#x6295;&#x7968;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x662F;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x7684;&#x611F;&#x53D7;&#x3002;&#x6240;&#x4EE5;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x8981;&#x548C;&#x7528;&#x6237;&#x7814;&#x7A76;&#x7D27;&#x5BC6;&#x7ED3;&#x5408;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x65AD;&#x4E3A;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x8BBE;&#x8BA1;&#x6EE1;&#x610F;&#x89C6;&#x89C9;&#x6548;&#x679C;&#x7684;&#x8FC7;&#x7A0B;&#x3002;
+              |                         
+              figcaption
+                h2.hidden-xs &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+            |                     
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 Heading
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              |                         
+              figcaption
+                h2.hidden-xs &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+            |                     
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 Heading
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+              |                         
+              figcaption
+                h2.hidden-xs &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+            |                     
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 &#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x67B6;&#x6784;&#x5206;&#x6790;
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | &#x73B0;&#x5728;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x7684;&#x6574;&#x4F53;&#x67B6;&#x6784;&#x4E3B;&#x8981;&#x5206;&#x4E3A;B/S&#x67B6;&#x6784;&#x4E0E;C/S&#x67B6;&#x6784; B/S&#x7ED3;&#x6784;&#xFF08;Browser/Server&#xFF0C;&#x6D4F;&#x89C8;&#x5668;/&#x670D;&#x52A1;&#x5668;&#x6A21;&#x5F0F;&#xFF09;&#xFF0C;&#x5BA2;&#x6237;&#x673A;&#x4E0A;&#x53EA;&#x8981;&#x5B89;&#x88C5;&#x4E00;&#x4E2A;&#x6D4F;&#x89C8;&#x5668;&#xFF08;Browser&#x82F1; [&apos;bra&#x28A;z&#x259;]&#x7F8E; [&apos;bra&#x28A;z&#x25A;]&#xFF09;&#xFF0C;&#x5982;Netscape Navigator&#x6216;Internet Explorer&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x5B89;&#x88C5;SQL Server&#x3001;Oracle&#x3001;MYSQL&#x7B49;&#x6570;&#x636E;&#x5E93;&#x3002;&#x6D4F;&#x89C8;&#x5668;&#x901A;&#x8FC7;Web Server &#x540C;&#x6570;&#x636E;&#x5E93;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4EA4;&#x4E92;&#x3002;
+              |                         
+              figcaption
+                h2.hidden-xs &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+            |                     
+            .effect-zoe.articlelist.a-fadeinT
+              .content
+                h2 UI&#x8DDF;&#x524D;&#x7AEF;&#x5F00;&#x53D1;&#x7684;&#x533A;&#x522B;
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye
+                    | &#x6D4F;&#x89C8;&#x91CF; 30
+                  span
+                    i.fa.fa-comment
+                    | &#x8BC4;&#x8BBA;&#x6570; 60
+                |                             
+                p.details
+                  | &#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;&#x53EF;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;&#x7F16;&#x7801;&#x8BBE;&#x8BA1;&#x4E0E;UI&#x8BBE;&#x8BA1;&#x3002; UI: user interface &#xFF08;&#x7528;&#x6237; &#x754C;&#x9762;&#xFF09;&#x4ECE;&#x5B57;&#x9762;&#x4E0A;&#x770B;&#x662F;&#x7528;&#x6237;&#x4E0E;&#x754C;&#x9762;2&#x4E2A;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x8FD8;&#x5305;&#x62EC;&#x7528;&#x6237;&#x4E0E;&#x754C;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x4EA4;&#x4E92;&#x5173;&#x7CFB;&#x3002;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#xFF0C;&#x5728;&#x6F2B;&#x957F;&#x7684;&#x8F6F;&#x4EF6;&#x53D1;&#x5C55;&#x4E2D;&#xFF0C;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x5DE5;&#x4F5C;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x88AB;&#x91CD;&#x89C6;&#x8D77;&#x6765;&#x3002;&#x505A;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x7684;&#x4EBA;&#x4E5F;&#x88AB;&#x8D2C;&#x4E49;&#x7684;&#x79F0;&#x4E3A;&ldquo;&#x7F8E;&#x5DE5;&rdquo;&#x3002;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x4E0D;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x7F8E;&#x672F;&#x7ED8;&#x753B;&#xFF0C;&#x4ED6;&#x9700;&#x8981;&#x5B9A;&#x4F4D;&#x4F7F;&#x7528;&#x8005;&#x3001;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#x3001;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5E76;&#x4E14;&#x4E3A;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x800C;&#x8BBE;&#x8BA1;&#xFF0C;&#x662F;&#x7EAF;&#x7CB9;&#x7684;&#x79D1;&#x5B66;&#x6027;&#x7684;&#x827A;&#x672F;&#x8BBE;&#x8BA1;&#x3002;&#x68C0;&#x9A8C;&#x4E00;&#x4E2A;&#x754C;&#x9762;&#x7684;&#x6807;&#x51C6;&#x65E2;&#x4E0D;&#x662F;&#x67D0;&#x4E2A;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x7EC4;&#x9886;&#x5BFC;&#x7684;&#x610F;&#x89C1;&#x4E5F;&#x4E0D;&#x662F;&#x9879;&#x76EE;&#x6210;&#x5458;&#x6295;&#x7968;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x800C;&#x662F;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x7684;&#x611F;&#x53D7;&#x3002;&#x6240;&#x4EE5;&#x754C;&#x9762;&#x8BBE;&#x8BA1;&#x8981;&#x548C;&#x7528;&#x6237;&#x7814;&#x7A76;&#x7D27;&#x5BC6;&#x7ED3;&#x5408;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x65AD;&#x4E3A;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x8BBE;&#x8BA1;&#x6EE1;&#x610F;&#x89C6;&#x89C9;&#x6548;&#x679C;&#x7684;&#x8FC7;&#x7A0B;&#x3002;
+              |                         
+              figcaption
+                h2.hidden-xs &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='#')
+                      i.fa.fa-tag
+                      | HTML5
+                  |                                 
+                  span
+                    a(href='#')
+                      i.fa.fa-columns
+                      | &#x524D;&#x7AEF;&#x6280;&#x672F;
+        |             
+        .col-xs-12.col-sm-3.a-fadeinR
+          .tag
+            p
+              a(href='') &#x6807;&#x7B7E;&#x4E91;
+            |                     
+            #tagscloud1.tagscloud
+              a(href='#') HTMl
+              |                         
+              a(href='#') Javascript
+              |                         
+              a(href='#') &#x5FC3;&#x60C5;
+              |                         
+              a(href='#') NodeJS
+              |                         
+              a(href='#') &#x6280;&#x672F;
+              |                         
+              a(href='#') &#x5B66;&#x4E60;
+              |                         
+              a(href='#') &#x76AE;&#x56CA;
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') HTMl
+              |                         
+              a(href='#') Javascript
+              |                         
+              a(href='#') &#x5FC3;&#x60C5;
+              |                         
+              a(href='#') NodeJS
+              |                         
+              a(href='#') &#x6280;&#x672F;
+              |                         
+              a(href='#') &#x5B66;&#x4E60;
+              |                         
+              a(href='#') &#x76AE;&#x56CA;
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+          |                 
+          .tag
+            p
+              a(href='') &#x6587;&#x96C6;&#x4E91;
+            |                     
+            #tagscloud2.tagscloud
+              a(href='#') Link(1)
+              |                         
+              a(href='#') Link(2)
+              |                         
+              a(href='#') Link(3)
+              |                         
+              a(href='#') Link(4)
+              |                         
+              a(href='#') Link(5)
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+              |                         
+              a(href='#') Link
+      |         
+      footer.blog-footer
+        .container
+          p &#x4F5C;&#x8005;&#xFF1A; &#x6768;&#x5C0F;&#x4FA8; 
+      |         
+      script(src='js/jquery-2.1.3.min.js')
+      |         
+      script(src='js/bootstrap.min.js')
+      |         
+      script(src='js/tagscloud.js')
+      |         
+      script(src='js/elastic-columns.min.js')
+      |         
+      script(src='js/pace.min.js')
+      |         
+      script(src='js/manhuatoTop.1.0.js')
+      |         
+      |         
+      script.
+        $(function() {
+        if ($(window).width() > 768) {
+        $('#waterfall').elasticColumns({
+        columns: 3,
+        innerMargin: 20,
+        outerMargin: 10
+        });
+        } else {
+        $('#waterfall').elasticColumns({
+        columns: 1,
+        innerMargin: 10,
+        outerMargin: 5
+        });
+        }
+        $(window).manhuatoTop({
+        showHeight : 100,
+        speed : 500
+        })
+        });

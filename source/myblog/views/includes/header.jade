@@ -1,23 +1,30 @@
-section#navigation.navigation-section.page-section.header-nav-fixed
-	section.inner-section
-		section.container
-			div.row
-				article.col-md-12.text-center
-					div.navigation-container
-						div.logo.pull-left
-							a.logos(href="#home")
-								img(height="60" src="#{config.headPicture}")
-						div.navigation-right
-							ul
-								li
-									a#home-linker.nav-active.scroll-link(href="/") 首页
-								li
-									a#about-linker.scroll-link(href="/articleList") 文章
-								li
-									a#team-linker.scroll-link(href="/collect") 文集
-								li
-									a#team-linker.scroll-link(href="#contact") 关于我
-								if isMe
-									li
-										a#team-linker.scroll-link(href='/admin' title="管理页") 
-											span.glyphicon.glyphicon-user
+nav.navbar.navbar-fixed-top.navbar-inverse
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+            span.sr-only Toggle navigation
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+            |                     
+            span.icon-bar
+          |                 
+          a.navbar-brand.logo(href='/') &#x6768;&#x5C0F;&#x4FA8;Blog
+        |             
+        #navbar.collapse.navbar-collapse.pull-right
+          ul.nav.navbar-nav
+            li.active
+              a(href='/')
+                i.fa.fa-home
+                span &#x9996;&#x9875;
+            |                     
+            li
+              a(href='/about')
+                i.fa.fa-bullhorn
+                span &#x5173;&#x4E8E;&#x6211;
+            if isMe
+                li
+                    a(href='/admin' title="管理页")
+                        i.fa.fa-user
+                        span 管理员
