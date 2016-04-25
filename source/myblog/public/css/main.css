@@ -262,7 +262,10 @@ figcaption h2 > a {
     padding: 3px;
     border-radius: 2px;
     border: 1px solid #fff;
-}    
+} 
+.newBlog {
+    margin-bottom: 10px;
+}   
 
 
 @media (max-width: 786px) {
