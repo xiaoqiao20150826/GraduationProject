@@ -4,7 +4,7 @@ var Blog = require('../models/blog');
 var Tag = require('../models/tag');
 var Collect = require('../models/collect');
 var util = require('../common/util');
-var async = require('async');
+var async = require('async'); //流程控制工具包，提供了直接而强大的异步功能
 function process(req, res, totPage, tag, collect) {
     var page = 1;
     if (req.query) {
@@ -38,8 +38,8 @@ router.get('/', function(req, res) {
     if (req.query) {
         page = req.query.page || 1;
     }
-    async.series([
-        function (callback){
+    async.series([   //串行(series)，并行(parallel)，瀑布(waterfall)
+        function (callback){  //集合: Collections 集合: Collections 工具类: Utils
             Blog.findTotPage(function (totPage) {
                 callback(null, totPage);
             });

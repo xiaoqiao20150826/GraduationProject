@@ -268,10 +268,10 @@ figcaption h2 > a {
 }
 
 .content img {
-    width: 100%;
+    max-width: 100%;
 }
 .article img {
-    width:100%;
+    max-width:100%;
 }
 #collectDetail .collect-title {
     padding: 6px 0;
