@@ -104,12 +104,12 @@ function updateList(sel) {
 function genList(data) {
     removeList();
     var len = data.length;
-    var s = '<div class="col-sm-12 collect-title">'
-        +       '<span id="up-#{seq}" class="glyphicon glyphicon-arrow-up collect-arrow mr3"></span>'
-        +       '<span id="down-#{seq}" class="glyphicon glyphicon-arrow-down collect-arrow mr3"></span>'
-        +       '<span id="remove-#{seq}" class="glyphicon glyphicon-remove collect-red"></span>'
+    var s = '<div class="col-sm-8 collect-title col-sm-offset-2">'
         +       '<span> #{index}. </span>'
         +       '<span><a href="/article/#{customURL}">#{title}</a></span>'
+        +       '<span id="remove-#{seq}" class="fa fa-times collect-red"></span>'  
+        +       '<span id="down-#{seq}" class="fa fa-arrow-circle-down collect-arrow mr3"></span>'      
+        +       '<span id="up-#{seq}" class="fa fa-arrow-circle-up collect-arrow mr3"></span>'
         +       '<input class="hide" name = "article[#{seq}]" value = "#{articleID}"/>'
         +   '</div>';
     var res = '';

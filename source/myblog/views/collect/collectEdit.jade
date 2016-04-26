@@ -1,7 +1,5 @@
 extends ../layout
 
-block cssjs
-    script(src = "/js/collect.js")
 block content
     div.collect-container
         form(class = 'form-horizontal' action = '/collect/doEdit' onsubmit='javascript: return check();')
@@ -19,10 +17,12 @@ block content
                 div.col-sm-offset-8.col-sm-2
                     input.btn.btn-primary.btn-block(type = 'button' value = '添加文章' id = 'add')/
                 div.col-sm-2
-                    input.btn.btn-primary.btn-block(type = 'submit' value = '提交' id = 'submit')/
+                    input.btn.btn-danger.btn-block(type = 'submit' value = '提交' id = 'submit')/
         div(id="addContainer" style="display:none")
             select.collect-article.form-control(id = 'article' multiple size="20")
                 each val in article
                     option(value = "#{val.articleID}-#{val.customURL}")= val.title
-            div.col-sm-2.col-sm-offset-10
+            div.col-sm-2.col-sm-offset-10.mt10
                 button.btn.btn-primary.btn-block(id="addbtn") 确定
+block js
+    script(src = "/js/collect.js")

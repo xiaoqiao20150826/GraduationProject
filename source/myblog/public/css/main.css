@@ -265,9 +265,31 @@ figcaption h2 > a {
 } 
 .newBlog {
     margin-bottom: 10px;
+}
+
+.content img {
+    width: 100%;
+}
+.article img {
+    width:100%;
+}
+#collectDetail .collect-title {
+    padding: 6px 0;
+    font-size: 16px;
 }   
-
-
+.collect-title .fa {
+    float: right;
+    font-size: 18px;
+}
+.collect-title .fa-times {
+    color:red;
+}
+.collect-title .fa-arrow-circle-up,.collect-title .fa-arrow-circle-down {
+    color: #49B949;
+}
+.collect-title .fa:hover {
+    color: #337ab7;
+}
 @media (max-width: 786px) {
     .carousel {
         margin-right: -15px;
