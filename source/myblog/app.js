@@ -71,7 +71,7 @@ var opts = {
 
 mongoose.connect('mongodb://'+ config.dbAddress + ':' + config.dbPort + '/' +config.dbName);
 
-app.set('port', 3300);
+app.set('port', process.env.PORT || config.port);
 
 var server = app.listen(app.get('port'), function() {
   console.log('Server listening on port ' + server.address().port);

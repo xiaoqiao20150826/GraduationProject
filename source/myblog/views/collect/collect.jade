@@ -1,14 +1,13 @@
 extends ../layout
 
 block content
-    div.row
-        div.col-sm-8
-            each val in doc
-                div.blog-container
-                    div.blog-title
-                        a(href='/collect/cid/#{val.collect}')= val.collect
-                    div.blog-wrap
-                        each v,index in val.article
+    each val in doc
+        .col-xs-12.col-sm-9
+            h3.text-center.blogmark
+                a(href='/collect/cid/#{val.collect}')= val.collect
+            .row
+                .collectList 
+                    each v,index in val.article
                             div.collect-article-title
                                 =(index + 1) +'. ' 
                                 a(href='/article/#{v.customURL}')= v.title

@@ -290,6 +290,12 @@ figcaption h2 > a {
 .collect-title .fa:hover {
     color: #337ab7;
 }
+.collectList {
+    background: #fff;
+    box-shadow: 0px 1px 5px -1px #B1ADAD;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+}
 @media (max-width: 786px) {
     .carousel {
         margin-right: -15px;
