@@ -36,7 +36,7 @@ router.get('/admin', function(req, res) {
             }
         };
         res.render('admin', {
-            title: config.blogName,
+            title: "博客后台管理",
             isMe : req.session.isMe,
             reply: rs[0],
             doc: rs[1]

@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express'); //加载express框架
+var router = express.Router();   //创建一个路由实例
 var Blog = require('../models/blog');
 var Tag = require('../models/tag');
 var Collect = require('../models/collect');
@@ -37,8 +37,9 @@ router.get('/', function(req, res) {
     var page = 1;
     if (req.query) {
         page = req.query.page || 1;
+        console.log(page);
     }
-    async.series([   //串行(series)，并行(parallel)，瀑布(waterfall)
+    async.series([   //串行(series) 它的作用就是按照顺序一次执行。
         function (callback){  //集合: Collections 集合: Collections 工具类: Utils
             Blog.findTotPage(function (totPage) {
                 callback(null, totPage);

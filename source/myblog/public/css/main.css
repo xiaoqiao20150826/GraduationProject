@@ -296,6 +296,19 @@ figcaption h2 > a {
     margin-bottom: 20px;
     padding: 10px 5px;
 }
+.mytab {
+    margin-top:10px;
+}
+.mytabC {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-top: none;
+}
+.mr20 {
+    margin-right: 20px;
+}
+
 @media (max-width: 786px) {
     .carousel {
         margin-right: -15px;

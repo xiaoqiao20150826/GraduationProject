@@ -1,19 +1,13 @@
 var config = {
     blogName: '杨小侨的个人博客',
-    headPicture: '/img/logo/logo.png',
     aPageNum: 7,//分页,一页显示多少文章.
     dbUser: 'root',//dbUser填写 '' 说明数据库和本博客在同一台机器
     dbPass: '1234',
-    dbAddress: '127.0.0.1',
+    dbAddress: 'localhost',
     dbPort: '27017',
     dbName: 'blog',
     port: '3000',
     ownerName: '杨小桥',//个人姓名，显示在博主信息中
-    ownerLocation: '',//所在地，显示在博主信息中
-    ownerOccupation: '-',//职业，显示在博主信息中
-    ownerSkill: '',//主要从事领域与技能，显示在博主信息中
-    motto: 'Thoughts, stories and ideas.',//座右铭，显示在博主信息中
-    email: 'longmenwaideyu@126.com',
     serverPlatform: {
         platform: 'local',
         AccessKey: 'xxx',//platform是local可以不填

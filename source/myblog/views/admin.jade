@@ -1,31 +1,30 @@
 extends layout
 
 block content
-    div.row.admin-title
+    div.admin-title.clearfix
         div.col-sm-4
             a.btn.btn-primary.btn-block(href='/new') 写博客
         div.col-sm-4
             a.btn.btn-primary.btn-block(href='/collect/edit') 编辑文集
-    div.row
-        div.admin-title
-            h3 最近回复
-        div.admin-box
-            ul.admin-ul
-                each val in reply
-                    li.admin-li
-                        p #{val.nick} 在 《#{val.title}》 对 #{val.replyWhoNick} 说:
-                        span!= val.content
-                        p
-                            a(href='/article/#{val.customURL}?replyID=#{val.replyID}') 查看
-                            a(href='javascript:void(0);' replyID="#{val.replyID}") 删除
-        div.admin-title
-            h3 文章列表
-        div.admin-box
-            ul.admin-ul
+    ul#myTab.nav.nav-tabs.mytab
+      li.active
+        a(href='#replyAdmin', data-toggle='tab')
+          | 最近回复
+      |    
+      li
+        a(href='#list', data-toggle='tab') 文章列表
+    #myTabContent.tab-content.mytabC
+      #replyAdmin.tab-pane.fade.in.active
+        each val in reply
+           div.panel.panel-info
+                div.panel-heading #{val.nick} 在 《#{val.title}》 对 #{val.replyWhoNick} 说:
+                div.panel-body!= val.content
+                    a.btn.btn-danger.pull-right(href='javascript:void(0);' replyID="#{val.replyID}") 删除
+                    a.btn.btn-info.pull-right.mr20(href='/article/#{val.customURL}?replyID=#{val.replyID}') 查看
+      #list.tab-pane.fade
+            ul.list-group
                 each val in doc
-                    li.admin-li
-                        p
-                            span
-                                a(href='/article/#{val.customURL}')= val.title
-                            span.admin-edit
-                                a(href='/edit?articleID=#{val.articleID}') 编辑
+                    li.list-group-item
+                        a(href='/article/#{val.customURL}')= val.title
+                        a.btn.btn-info.btn-xs.pull-right(href='/edit?articleID=#{val.articleID}') 编辑
+    

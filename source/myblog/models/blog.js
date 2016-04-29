@@ -19,6 +19,7 @@ var BlogSchema = new Schema({
     modifyTime: { type: Date, default: Date.now }
 });
 BlogSchema.statics.findTotPage = function (callback) {
+    console.log(cache);
     if (cache.totPage) {
         callback(cache.totPage);
         return;
