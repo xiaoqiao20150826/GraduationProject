@@ -1,5 +1,5 @@
 var util = {};
-var cheerio = require('cheerio');
+var cheerio = require('cheerio');  //抓取网页数据
 var Collect = require('../models/collect');
 var Tag = require('../models/tag');
 var Blog = require('../models/blog');
@@ -76,12 +76,13 @@ util.getSEO = function (doc) {
     seo.description = util.getSEODescription(doc);
     return seo;
 }
+//获取文章的前面一段内容，并把图片提前显示出来
 util.getAbstract = function (doc) {
     for (var i = doc.length - 1; i >= 0; i--) {
         var $ = cheerio.load(doc[i].content);
         doc[i].content = '';
         $('img').each(function (j, item) {
-            if (j >= 3) return false;
+            if (j >= 1) return false;
             doc[i].content += '<img src="' + item.attribs.src + '">';
         });
         doc[i].content += $.root().text().substr(0, 300)

@@ -12,15 +12,17 @@ TagSchema.statics.findAllTag = function (callback) {
         return;
     }
     return this.model('Tag').find({}, function (error, doc) {
+        //doc为find()出来的内容
         if (error) {
             console.log(error);
             callback({});
         } else {
             var tag = {};
             for (var i = doc.length - 1; i >= 0; i--) {
-                if (!tag[doc[i].tag])
-                    tag[doc[i].tag] = 0;
-                tag[doc[i].tag] ++;
+                
+                if (!tag[doc[i].tag]) //判断doc[i].tag属性值是否有 
+                    tag[doc[i].tag] = 0;//没有就添加 ，且值为0 
+                tag[doc[i].tag] ++;     //这个属性的值+1，如果存在直接加1  
             }
             cache.tag = tag;
             callback(tag);

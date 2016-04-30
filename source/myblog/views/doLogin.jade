@@ -1,5 +1,9 @@
 ﻿extends layout
-block cssjs
+
+block content
+    div.row.text-center.bg-info
+        h3= info
+block js
     if fr
         script(type="text/javascript").
             setTimeout(function () {
@@ -7,6 +11,3 @@ block cssjs
                 if (!href) href = '/';
                 window.location.href = href;
             }, 1000);
-block content
-    div.row.text-center.bg-info
-        h3= info

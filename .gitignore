@@ -49,5 +49,6 @@ Temporary Items
 
 /node_modules
 /bower_components
+/source/test/node_modules
 /个性化模板
 npm-debug.log

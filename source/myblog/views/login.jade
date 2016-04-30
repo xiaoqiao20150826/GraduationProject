@@ -1,6 +1,20 @@
 extends layout
-block cssjs
-    script(type="text/javascript", src="/js/jquery.md5.js")
+
+block content
+    .col-xs-10.col-sm-4
+    .col-xs-10.col-sm-4.text-center
+        form.form-signin.loginform(role='form', id='loginform' name='loginform', action='/doLogin' onsubmit='javascript: return check()')
+            h2.form-signin-heading &#x767B;&#x5F55;             
+            label.sr-only(for='userID') &#x7528;&#x6237;&#x540D;            
+            input.form-control(type='text', placeholder='用户名', id='userID' name='userID',required autofocus)           
+            label.sr-only(for='password') &#x5BC6;&#x7801;             
+            input.form-control(type='password',id='password' name='password', placeholder='密码', required)
+            input(type='text', id='fr' name='fr', class='hide')                          
+            button.btn.btn-lg.btn-primary.btn-block(type='submit') &#x767B;&#x5F55;
+    .col-xs-10.col-sm-4
+block js
+    //- script(type="text/javascript", src="/js/jquery.md5.js")是jquery的加密插件
+    //- mongod已经加盐了。
     script(type="text/javascript").
         function check() {
             var pwd = $('#password').val();
@@ -17,15 +31,3 @@ block cssjs
             $('#password').val($.md5(pwd));
             return true;
         }
-block content
-    .col-xs-10.col-sm-4
-    .col-xs-10.col-sm-4.text-center
-        form.form-signin.loginform(role='form', id='loginform' name='loginform', action='/doLogin' onsubmit='javascript: return check()')
-            h2.form-signin-heading &#x767B;&#x5F55;             
-            label.sr-only(for='userID') &#x7528;&#x6237;&#x540D;            
-            input.form-control(type='text', placeholder='用户名', id='userID' name='userID',required autofocus)           
-            label.sr-only(for='password') &#x5BC6;&#x7801;             
-            input.form-control(type='password',id='password' name='password', placeholder='密码', required)
-            input(type='text', id='fr' name='fr', class='hide')                          
-            button.btn.btn-lg.btn-primary.btn-block(type='submit') &#x767B;&#x5F55;
-    .col-xs-10.col-sm-4

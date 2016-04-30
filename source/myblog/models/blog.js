@@ -4,9 +4,15 @@ var mongoose = require('mongoose')
 var autoinc  = require('mongoose-id-autoinc');
 var db = mongoose.connection;
 autoinc.init(db);
+//定义一个Schema 
+//new Schema()中传入一个JSON对象，该对象形如 xxx:yyyy ,
+//xxx是一个字符串，定义了属性，yyy是一个Schema.Type，定义了属性类型
+//var ObjectId = mongoose.Schema.Types.ObjectId;
+//var TeacherSchema = new Schema({id:ObjectId});//只有id:ObjectId
+//主键，一种特殊而且非常重要的类型，每个Schema都会默认配置这个属性，属性名为_id
 var BlogSchema = new Schema({
     customURL: { type: String, default: '' }, 
-    userID: { type: String },
+    userID: { type: String }, //ObjectId??
     title: { type: String },
     content: { type: String },
     browse: { type: Number, default: 0 },
@@ -18,28 +24,72 @@ var BlogSchema = new Schema({
     createTime: { type: Date, default: Date.now },
     modifyTime: { type: Date, default: Date.now }
 });
+//静态方法在Model层就能使用
+//查看文章的总页数
 BlogSchema.statics.findTotPage = function (callback) {
-    console.log(cache);
+    //在全局变量cache上添加totPage属性
     if (cache.totPage) {
         callback(cache.totPage);
         return;
     }
     return this.model('Blog')
         .find()
+        //使用指定的正则表达式模式去字符串中查找匹配项，并以数组形式返回，如果未查找到则返回null
         .exec(function (error, doc) {
             if (error) {
                 console.log(error);
                 callback(0);
             } else {
+                //函数,math.ceil(x)返回大于参数x的最小整数
                 callback((cache.totPage = Math.ceil(doc.length / config.aPageNum)));
             }
         });
+
 }
+
 BlogSchema.statics.findByPage = function (page, callback) {
     return this.model('Blog')
         .find()
         .sort({ createTime: -1 })
         .skip((page - 1) * config.aPageNum)
+        .limit(config.aPageNum)
+        .exec(function (error, doc) {
+            if (error) {
+                console.log(error);
+                callback([]);
+            } else {
+                callback(doc);
+            }
+        });
+}
+BlogSchema.statics.findRrowse = function (page, callback) {
+    return this.model('Blog')
+        .find()
+        //实现排序  倒序 浏览量多的在最前面
+        .sort({ browse: -1 })
+        //实现分页
+        //skip()控制返回结果跳过多少数量，如果参数是0，则当作没有约束，skip()将不起作用，或者说跳过了0条。
+        .skip((page - 1) * config.aPageNum)
+        //limit()控制返回结果数量，如果参数是0，则当作没有约束，limit()将不起作用。
+        .limit(config.aPageNum)
+        .exec(function (error, doc) {
+            if (error) {
+                console.log(error);
+                callback([]);
+            } else {
+                callback(doc);
+            }
+        });
+}
+BlogSchema.statics.findReply = function (page, callback) {
+    return this.model('Blog')
+        .find()
+        //实现排序  倒序 浏览量多的在最前面
+        .sort({ reply: -1 })
+        //实现分页
+        //skip()控制返回结果跳过多少数量，如果参数是0，则当作没有约束，skip()将不起作用，或者说跳过了0条。
+        .skip((page - 1) * config.aPageNum)
+        //limit()控制返回结果数量，如果参数是0，则当作没有约束，limit()将不起作用。
         .limit(config.aPageNum)
         .exec(function (error, doc) {
             if (error) {
@@ -200,4 +250,5 @@ BlogSchema.plugin(autoinc.plugin, {
   start: 1,
   step: 1
 });
+//将该Schema发布为Model
 module.exports = mongoose.model('Blog', BlogSchema); 

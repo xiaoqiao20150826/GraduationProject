@@ -23,6 +23,7 @@ router.get('/new', function(req, res) {
     res.render('blog/new', {
         title: config.blogName,
         user: req.session.userInfo,
+        isMe : req.session.isMe,
         data: val,
         action: '/doNew'
     });

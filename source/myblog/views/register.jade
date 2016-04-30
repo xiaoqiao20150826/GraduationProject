@@ -1,7 +1,17 @@
 extends layout
-block cssjs
-    link(rel='stylesheet', href='/css/register.css')
-    script(type="text/javascript", src="/js/jquery.md5.js")
+
+block content
+    form.form-signin(role='form', id='registerform' name='registerform', action='/doRegister' onsubmit='javascript: return check()')
+        h4.form-signin-heading 请填写:
+        input(type='text', id='userID' name='userID', class='form-control', placeholder='用户名', required autofocus)
+        input(type='password', id='password' name='password', class='form-control', placeholder='密码', required)
+        input(type='password', id = 'repeat' name = 'repeat', class='form-control', placeholder='确认密码', required)
+        input(type='text', id = 'nick' name='nick', class='form-control', placeholder='昵称', required)
+        input(type='email', id = 'email' name='email', class='form-control', placeholder='邮箱', required)
+        input(type='text', id='fr' name='fr', class='hide')
+        button(type='submit', class='btn btn-lg btn-primary btn-block') 注册
+block js
+    //-script(type="text/javascript", src="/js/jquery.md5.js")前端不加密了。经常登录不进去
     script(type="text/javascript").
         function check() {
             var userID = $('#userID').val().trim();
@@ -32,13 +42,3 @@ block cssjs
             $('#fr').val(getQueryString('fr'));
             return true;
         }
-block content
-    form.form-signin(role='form', id='registerform' name='registerform', action='/doRegister' onsubmit='javascript: return check()')
-        h4.form-signin-heading 请填写:
-        input(type='text', id='userID' name='userID', class='form-control', placeholder='用户名', required autofocus)
-        input(type='password', id='password' name='password', class='form-control', placeholder='密码', required)
-        input(type='password', id = 'repeat' name = 'repeat', class='form-control', placeholder='确认密码', required)
-        input(type='text', id = 'nick' name='nick', class='form-control', placeholder='昵称', required)
-        input(type='email', id = 'email' name='email', class='form-control', placeholder='邮箱', required)
-        input(type='text', id='fr' name='fr', class='hide')
-        button(type='submit', class='btn btn-lg btn-primary btn-block') 注册

@@ -9,6 +9,7 @@ var app = express();  //创建一个express实例
 var session = require('express-session')  //会话中间件。实现持久化会话
 
 //设置 views 文件夹为存放视图文件的目录, 即存放模板文件的地方,__dirname 为全局变量,存储当前正在执行的脚本所在的目录。
+//console.log('__dirname:' + __dirname)
 app.set('views', path.join(__dirname, 'views'));
 //设置引擎，将.jade扩展名的文件用./common/jade处理
 app.engine('.jade', require('./common/jade'));
@@ -28,7 +29,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-//配置和缓存
+//配置和缓存 global为Node.js的全局变量
 global.config = require('./common/config');
 global.cache = {}; 
 

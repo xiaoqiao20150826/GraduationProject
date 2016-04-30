@@ -41,6 +41,7 @@ function use(app) {
         staticPath: path.join(__dirname, 'public'),
         dynamicPath: dynamicPath
     }));
+    //将路由使用use方法挂载到app上
     app.use('/', index);    
     app.use('/', blogNew);
     app.use('/', blogDoNew);
@@ -56,7 +57,7 @@ function use(app) {
     app.use('/', doEdit);
     app.use('/', admin);
     app.use('/', about);
-    app.use('/login', login);
+    app.use('/', login);
     app.use('/doLogin', doLogin);
     app.use('/register', register);
     app.use('/doRegister', doRegister);

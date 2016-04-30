@@ -20,9 +20,9 @@ CollectSchema.statics.findAllCollect = function (callback) {
         } else {
             var collect = {};
             for (var i = doc.length - 1; i >= 0; i--) {
-                if (!collect[doc[i].collect])
-                    collect[doc[i].collect] = 0;
-                collect[doc[i].collect] ++;
+                if (!collect[doc[i].collect])  //判断是否存在这个文集
+                    collect[doc[i].collect] = 0; //不存在就给collect加一个对象，属性名为doc[i].collect，值为0
+                collect[doc[i].collect] ++;  //将这个属性，值变为1。如果存在。直接加1
             }
             cache.collect = collect;
             callback(collect);

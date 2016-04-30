@@ -48,66 +48,147 @@ block content
         span.fa.icon-angle-right(aria-hidden='true')
         |                         
         span.sr-only Next
-    |                 
-    #waterfall.row
-      each val in doc
-        .effect-zoe.articlelist.a-fadeinT
-          .content
-            h2= val.title
-            |                             
-            p.data
-              span
-                i.fa.fa-eye= ' 浏览量 ' + val.browse
-              span
-                i.fa.fa-comment= ' 评论数 ' + val.reply
-            |                             
-            p.details!= val.content
-            |                             
-            p.visible-xs.mobilefigcaption
-              a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
-              each tag in val.tagArr
-                span
-                  a(href='/tag/#{tag}')
-                    i.fa.fa-tag= ' ' + tag
-              each c in val.collectArr                                 
-                span
-                  a(href='/collect/cid/#{c}')
-                    i.fa.fa-columns= ' ' + c
-          |                         
-          figcaption
-            h2.hidden-xs
-              a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
-            |                             
-            p.icon-links
-              each tag in val.tagArr
-                span
-                  a(href='/tag/#{tag}')
-                    i.fa.fa-tag= ' ' + tag
-              each c in val.collectArr                                 
-                span
-                  a(href='/collect/cid/#{c}')
-                    i.fa.fa-columns= ' ' + c
-    div.page
-      ul(class="pagination")
-          if curPage != 1
-              li
-                  a(href="/?page=#{curPage - 1}") &laquo;
-          else
-              li.disabled
-                  a(href="javascript:void(0)") &laquo;
-          -for (var i = 1; i <= totPage; i++)
-              if curPage == i
-                  li.active
-                      a(href='/?page=#{i}')= i
-              else
-                  li
-                      a(href='/?page=#{i}')= i
-          if curPage < totPage
-              li
-                  a(href="/?page=#{curPage + 1}") &raquo;
-          else
-              li.disabled
-                  a(href="javascript:void(0)") &raquo;    
+    ul#myTab.nav.nav-tabs.mytab
+      li
+        a(href='#uptodata', data-toggle='tab') 最新文章  
+      li.active
+        a(href='#hot', data-toggle='tab') 热门文章
+      li
+        a(href='#hotreply', data-toggle='tab') 热议文章  
+    #myTabContent.tab-content
+      #uptodata.tab-pane.fade                     
+        .row
+          each val in doc
+            .effect-zoe.articlelist.mb20.a-fadeinL
+              .content
+                h2= val.title
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye= ' 浏览量 ' + val.browse
+                  span
+                    i.fa.fa-comment= ' 评论数 ' + val.reply
+                |                             
+                p.details!= val.content
+                |                             
+                p.visible-xs.mobilefigcaption
+                  a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                    span
+                      a(href='/tag/#{tag}')
+                        i.fa.fa-tag= ' ' + val.tag
+                    each c in val.collectArr                                 
+                      span
+                        a(href='/collect/cid/#{c}')
+                          i.fa.fa-columns= ' ' + c
+              |                         
+              figcaption
+                h2.hidden-xs
+                  a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='/tag/#{tag}')
+                      i.fa.fa-tag= ' ' + val.tag
+                  each c in val.collectArr                                 
+                    span
+                      a(href='/collect/cid/#{c}')
+                        i.fa.fa-columns= ' ' + c
+      #hot.tab-pane.fade.in.active 
+        .row
+          each val in browseSort
+            .effect-zoe.articlelist.mb20.a-fadeinL
+              .content
+                h2= val.title
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye= ' 浏览量 ' + val.browse
+                  span
+                    i.fa.fa-comment= ' 评论数 ' + val.reply
+                |                             
+                p.details!= val.content
+                |                             
+                p.visible-xs.mobilefigcaption
+                  a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                    span
+                      a(href='/tag/#{tag}')
+                        i.fa.fa-tag= ' ' + val.tag
+                    each c in val.collectArr                                 
+                      span
+                        a(href='/collect/cid/#{c}')
+                          i.fa.fa-columns= ' ' + c
+              |                         
+              figcaption
+                h2.hidden-xs
+                  a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='/tag/#{tag}')
+                      i.fa.fa-tag= ' ' + val.tag
+                  each c in val.collectArr                                 
+                    span
+                      a(href='/collect/cid/#{c}')
+                        i.fa.fa-columns= ' ' + c
+      #hotreply.tab-pane.fade
+        .row
+          each val in replySort
+            .effect-zoe.articlelist.mb20.a-fadeinL
+              .content
+                h2= val.title
+                |                             
+                p.data
+                  span
+                    i.fa.fa-eye= ' 浏览量 ' + val.browse
+                  span
+                    i.fa.fa-comment= ' 评论数 ' + val.reply
+                |                             
+                p.details!= val.content
+                |                             
+                p.visible-xs.mobilefigcaption
+                  a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                    span
+                      a(href='/tag/#{tag}')
+                        i.fa.fa-tag= ' ' + val.tag
+                    each c in val.collectArr                                 
+                      span
+                        a(href='/collect/cid/#{c}')
+                          i.fa.fa-columns= ' ' + c
+              |                         
+              figcaption
+                h2.hidden-xs
+                  a(href='/article/#{val.customURL}') &#x8BE6;&#x7EC6;&#x9605;&#x8BFB;
+                |                             
+                p.icon-links
+                  span
+                    a(href='/tag/#{tag}')
+                      i.fa.fa-tag= ' ' + val.tag
+                  each c in val.collectArr                                 
+                    span
+                      a(href='/collect/cid/#{c}')
+                        i.fa.fa-columns= ' ' + c
+      div.page
+        ul(class="pagination")
+            if curPage != 1
+                li
+                    a(href="/?page=#{curPage - 1}") &laquo;
+            else
+                li.disabled
+                    a(href="javascript:void(0)") &laquo;
+            -for (var i = 1; i <= totPage; i++)
+                if curPage == i
+                    li.active
+                        a(href='/?page=#{i}')= i
+                else
+                    li
+                        a(href='/?page=#{i}')= i
+            if curPage < totPage
+                li
+                    a(href="/?page=#{curPage + 1}") &raquo;
+            else
+                li.disabled
+                    a(href="javascript:void(0)") &raquo;    
+    
   include ./includes/sidebar           
 block js
   script(src='/js/tagscloud.js') 
