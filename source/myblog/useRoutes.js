@@ -24,10 +24,10 @@ function use(app) {
     var dynamicPath = '';
     if (config.serverPlatform.platform == 'local') {
         dynamicPath = function(req) {
-            if (req.session.isMe) {
+            if (req.session.isMe) { //如果是上传的文件存储在uploadimage里
                 return '/uploadimage'
             } else {
-                return '/visitorimage'
+                return '/visitorimage'//如果是访客的图片就存储在visitorimage
             }
         }
     } else {
