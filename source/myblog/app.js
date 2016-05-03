@@ -25,9 +25,9 @@ app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 //配置session，实现会话持久化
 app.use(session({
-  secret: 'yy',
-  resave: false,
-  saveUninitialized: true
+  secret: 'yy',//用来对session数据进行加密的字符串.这个属性值为必须指定的属性。
+  resave: false, //是指每次请求都重新设置session cookie，假设你的cookie是6000毫秒过期，每次请求都会再设置6000毫秒
+  saveUninitialized: true  //是指无论有没有session cookie，每次请求都设置个session cookie ，默认给个标示为 connect.sid
 }));
 //配置和缓存 global为Node.js的全局变量
 global.config = require('./common/config');

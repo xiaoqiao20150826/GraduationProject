@@ -6,6 +6,7 @@ function use(app) {
     var articleList = require('./routes/articleList');
     var login = require('./routes/login');
     var doLogin = require('./routes/doLogin');
+    var logout = require('./routes/logout');
     var blogNew = require('./routes/blog/new');
     var blogDoNew = require('./routes/blog/doNew');
     var article = require('./routes/blog/article');
@@ -58,6 +59,7 @@ function use(app) {
     app.use('/', admin);
     app.use('/', about);
     app.use('/', login);
+    app.use('/', logout);
     app.use('/doLogin', doLogin);
     app.use('/register', register);
     app.use('/doRegister', doRegister);

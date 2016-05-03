@@ -310,7 +310,13 @@ figcaption h2 > a {
 .mr20 {
     margin-right: 20px;
 }
-
+.logout {
+    color: #9d9d9d;
+    line-height: 50px;
+}
+a.logout:hover {
+    color: #fff;
+}
 @media (max-width: 786px) {
     .carousel {
         margin-right: -15px;

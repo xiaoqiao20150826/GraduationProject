@@ -1,17 +1,5 @@
 ﻿$(function() {
-    if ($(window).width() > 768) {
-        $('#waterfall').elasticColumns({
-            columns: 3,
-            innerMargin: 20,
-            outerMargin: 10
-        });
-    } else {
-        $('#waterfall').elasticColumns({
-            columns: 1,
-            innerMargin: 10,
-            outerMargin: 5
-        });
-    }
+    
     $(window).manhuatoTop({
         showHeight: 100,
         speed: 500
